@@ -2,82 +2,90 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gástulo | Constructores y Asesores</title>
     <style>
-        /* ESTILOS GLOBALES */
-        body { background-color: #0a0a0a; color: white; font-family: sans-serif; margin: 0; }
-        a { text-decoration: none; color: inherit; }
+        /* BASE Y COLORES */
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; background-color: #0a0a0a; color: #ffffff; }
+        .gold-text { color: #C5A059; }
+        
+        /* HEADER / NAV */
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: #111; border-bottom: 2px solid #C5A059; }
+        .logo-main img { height: 50px; }
+        nav a { color: #fff; margin-left: 30px; font-weight: bold; text-decoration: none; transition: 0.3s; }
+        nav a:hover { color: #C5A059; }
 
-        /* MENÚ */
-        nav { display: flex; justify-content: space-between; padding: 20px 50px; background: #111; border-bottom: 1px solid #333; }
-        .menu-items a { margin-left: 20px; color: #fff; font-weight: bold; transition: 0.3s; }
-        .menu-items a:hover { color: #C5A059; border-bottom: 2px solid #C5A059; }
+        /* HERO */
+        .hero { height: 80vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('background.jpg'); background-size: cover; display: flex; align-items: center; justify-content: center; text-align: center; }
+        .hero h1 { font-size: 3rem; text-transform: uppercase; margin: 0; }
 
-        /* CONTACTO Y FORMULARIO (Estilo Dorado) */
-        .seccion-contacto { padding: 50px; display: flex; gap: 50px; align-items: center; }
-        .formulario-caja { border: 1px solid #C5A059; padding: 30px; width: 400px; }
-        input, textarea { width: 100%; background: transparent; border: 1px solid #C5A059; color: white; padding: 10px; margin-bottom: 10px; box-sizing: border-box; }
-        button { background: #C5A059; border: none; padding: 10px 20px; color: black; font-weight: bold; cursor: pointer; }
+        /* SECCIONES */
+        .container { padding: 80px 8%; }
+        .contacto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        
+        /* FORMULARIO */
+        .form-box { border: 1px solid #C5A059; padding: 40px; }
+        input, textarea { width: 100%; background: #1a1a1a; border: 1px solid #C5A059; padding: 12px; margin-bottom: 15px; color: white; box-sizing: border-box; }
+        button { background: #C5A059; color: black; padding: 15px 30px; border: none; font-weight: bold; cursor: pointer; }
 
         /* FOOTER */
-        footer { padding: 40px 50px; background: #050505; border-top: 2px solid #C5A059; }
-        .footer-grid { display: flex; justify-content: space-between; }
-        .footer-info { display: flex; flex-direction: column; }
-        
-        /* LOGOS EN FOOTER */
-        .grupo-logos { display: flex; align-items: center; gap: 30px; margin-top: 15px; }
-        .grupo-logos a { display: inline-block; width: 120px; height: 50px; line-height: 50px; }
-        .logo-pequeno { width: 100%; height: auto; vertical-align: middle; filter: brightness(0.9); transition: 0.3s; }
-        .logo-pequeno:hover { filter: brightness(1.2); }
+        footer { background: #050505; padding: 50px 8%; border-top: 1px solid #333; }
+        .footer-content { display: flex; justify-content: space-between; align-items: flex-start; }
+        .grupo-logos { display: flex; gap: 20px; align-items: center; margin-top: 20px; }
+        .logo-pequeno { width: 100px; height: auto; filter: grayscale(20%); transition: 0.3s; }
+        .logo-pequeno:hover { filter: grayscale(0%); transform: scale(1.05); }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">GÁSTULO</div>
-        <div class="menu-items">
+    <header>
+        <div class="logo-main"><img src="gastulo.png" alt="Logo"></div>
+        <nav>
             <a href="#">INICIO</a>
             <a href="#">NOSOTROS</a>
             <a href="#">SERVICIOS</a>
             <a href="#">CONTÁCTANOS</a>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <section class="seccion-contacto">
-        <div class="mapa">
-            <iframe src="https://www.google.com/maps/embed?..." width="500" height="300" style="border:0;" allowfullscreen></iframe>
+    <section class="hero">
+        <div>
+            <h1>Innovación constante,</h1>
+            <h1 class="gold-text">Resultados excepcionales</h1>
         </div>
-        <div class="formulario-caja">
-            <h3>Contáctanos</h3>
+    </section>
+
+    <section class="container contacto-grid">
+        <div class="mapa">
+            <iframe src="https://www.google.com/maps/embed?..." width="100%" height="400" style="border:0;" allowfullscreen></iframe>
+        </div>
+        <div class="form-box">
+            <h2>Contáctanos</h2>
             <input type="text" placeholder="Nombre y Apellido">
             <input type="text" placeholder="Teléfono">
-            <input type="email" placeholder="Correo Electrónico">
-            <textarea placeholder="Mensaje"></textarea>
+            <input type="email" placeholder="Correo">
+            <textarea rows="4" placeholder="Mensaje"></textarea>
             <button>ENVIAR</button>
         </div>
     </section>
 
-    <footer id="contacto">
-        <div class="footer-grid">
-            <div class="footer-info">
+    <footer>
+        <div class="footer-content">
+            <div>
                 <h4>CONTÁCTENOS</h4>
                 <p>📍 Calle Teruel N° 370, Miraflores, Lima.</p>
                 <p>📞 +51 939 846 545</p>
                 <p>✉️ jlabogados.legal@gmail.com</p>
-
-                <div class="footer-empresas">
-                    <p style="font-size: 0.8rem; color: #888;">Conoce nuestras otras empresas:</p>
-                    <div class="grupo-logos">
-                        <a href="https://gastulo.pe" target="_blank">
-                            <img src="gastulo.png" alt="Gástulo" class="logo-pequeno">
-                        </a>
-                        <a href="https://fedas.pe" target="_blank">
-                            <img src="fedas.png" alt="Fedas" class="logo-pequeno">
-                        </a>
-                    </div>
+                
+                <p style="margin-top:20px; font-size: 0.8rem; color: #888;">Conoce nuestras otras empresas:</p>
+                <div class="grupo-logos">
+                    <a href="https://gastulo.pe"><img src="gastulo.png" class="logo-pequeno"></a>
+                    <a href="https://jl2.pe"><img src="jl2.png" class="logo-pequeno"></a>
+                    <a href="https://fedas.pe"><img src="fedas.png" class="logo-pequeno"></a>
                 </div>
             </div>
         </div>
+        <p style="text-align: center; margin-top: 40px; color: #444; font-size: 0.8rem;">© Copyright 2026 | Gástulo Asesores y Constructores</p>
     </footer>
 
 </body>
