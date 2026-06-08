@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gástulo | Constructores y Asesores</title>
+    <style>
+        /* ESTILOS GLOBALES */
+        body { background-color: #0a0a0a; color: white; font-family: sans-serif; margin: 0; }
+        a { text-decoration: none; color: inherit; }
+
+        /* MENÚ */
+        nav { display: flex; justify-content: space-between; padding: 20px 50px; background: #111; border-bottom: 1px solid #333; }
+        .menu-items a { margin-left: 20px; color: #fff; font-weight: bold; transition: 0.3s; }
+        .menu-items a:hover { color: #C5A059; border-bottom: 2px solid #C5A059; }
+
+        /* CONTACTO Y FORMULARIO (Estilo Dorado) */
+        .seccion-contacto { padding: 50px; display: flex; gap: 50px; align-items: center; }
+        .formulario-caja { border: 1px solid #C5A059; padding: 30px; width: 400px; }
+        input, textarea { width: 100%; background: transparent; border: 1px solid #C5A059; color: white; padding: 10px; margin-bottom: 10px; box-sizing: border-box; }
+        button { background: #C5A059; border: none; padding: 10px 20px; color: black; font-weight: bold; cursor: pointer; }
+
+        /* FOOTER */
+        footer { padding: 40px 50px; background: #050505; border-top: 2px solid #C5A059; }
+        .footer-grid { display: flex; justify-content: space-between; }
+        .footer-info { display: flex; flex-direction: column; }
+        
+        /* LOGOS EN FOOTER */
+        .grupo-logos { display: flex; align-items: center; gap: 30px; margin-top: 15px; }
+        .grupo-logos a { display: inline-block; width: 120px; height: 50px; line-height: 50px; }
+        .logo-pequeno { width: 100%; height: auto; vertical-align: middle; filter: brightness(0.9); transition: 0.3s; }
+        .logo-pequeno:hover { filter: brightness(1.2); }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">GÁSTULO</div>
+        <div class="menu-items">
+            <a href="#">INICIO</a>
+            <a href="#">NOSOTROS</a>
+            <a href="#">SERVICIOS</a>
+            <a href="#">CONTÁCTANOS</a>
+        </div>
+    </nav>
+
+    <section class="seccion-contacto">
+        <div class="mapa">
+            <iframe src="https://www.google.com/maps/embed?..." width="500" height="300" style="border:0;" allowfullscreen></iframe>
+        </div>
+        <div class="formulario-caja">
+            <h3>Contáctanos</h3>
+            <input type="text" placeholder="Nombre y Apellido">
+            <input type="text" placeholder="Teléfono">
+            <input type="email" placeholder="Correo Electrónico">
+            <textarea placeholder="Mensaje"></textarea>
+            <button>ENVIAR</button>
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <div class="footer-grid">
+            <div class="footer-info">
+                <h4>CONTÁCTENOS</h4>
+                <p>📍 Calle Teruel N° 370, Miraflores, Lima.</p>
+                <p>📞 +51 939 846 545</p>
+                <p>✉️ jlabogados.legal@gmail.com</p>
+
+                <div class="footer-empresas">
+                    <p style="font-size: 0.8rem; color: #888;">Conoce nuestras otras empresas:</p>
+                    <div class="grupo-logos">
+                        <a href="https://gastulo.pe" target="_blank">
+                            <img src="gastulo.png" alt="Gástulo" class="logo-pequeno">
+                        </a>
+                        <a href="https://fedas.pe" target="_blank">
+                            <img src="fedas.png" alt="Fedas" class="logo-pequeno">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
