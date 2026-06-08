@@ -26,10 +26,12 @@
         .service-card { border: 1px solid #222; padding: 50px; transition: 0.4s; }
         .service-card:hover { border-color: #C5A059; background: #0f0f0f; }
 
-        /* FOOTER CON CORRECCIÓN */
-        footer { padding: 50px 8%; background: #050505; border-top: 2px solid #C5A059; }
-        .contact-info { display: flex; justify-content: space-between; align-items: flex-end; }
-        .wsp-btn { position: fixed; bottom: 30px; right: 30px; background: #25d366; padding: 15px 25px; border-radius: 30px; color: #fff; text-decoration: none; font-weight: bold; }
+        /* FOOTER */
+        footer { background: #050505; padding: 50px 8%; border-top: 1px solid #333; }
+        .footer-content { display: flex; justify-content: space-between; align-items: flex-start; }
+        .grupo-logos { display: flex; gap: 20px; align-items: center; margin-top: 20px; }
+        .logo-pequeno { width: 100px; height: auto; filter: grayscale(20%); transition: 0.3s; }
+        .logo-pequeno:hover { filter: grayscale(0%); transform: scale(1.05); }
     </style>
 </head>
 <body>
@@ -74,12 +76,10 @@
             </div>
            <div>
             <p style="margin-bottom: 10px; font-size: 0.9rem;">Conoce nuestras otras empresas:</p>
-            <div class="footer-logos">
-                <a href="https://jl2.pe" target="_blank" style="display:inline-block; width: 120px; height: 50px; line-height: 50px;">
-                    <img src="jl2.png" alt="J&L Abogados" class="logo-pequeno">
-                </a>
-                <a href="https://fedas.pe" target="_blank" style="display:inline-block; width: 120px; height: 50px; line-height: 50px;">
-                    <img src="fedas.png" alt="Fedas" class="logo-pequeno">
+                <div class="grupo-logos">
+                    <a href="https://jlabogados.pe"><img src="jl2.png" class="logo-pequeno"></a>
+                    <a href="https://fedas.pe"><img src="fedas.png" class="logo-pequeno"></a>
+                </div>
                 </a>
             </div>
         </div>
