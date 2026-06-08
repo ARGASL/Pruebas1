@@ -1,62 +1,86 @@
-v<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gástulo | Constructores y Asesores</title>
     <style>
-        /* ESTILOS BASE */
-        body { margin: 0; font-family: 'Arial', sans-serif; background-color: #0a0a0a; color: #ffffff; }
+        /* BASE Y COLORES */
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; background-color: #0a0a0a; color: #ffffff; }
         .gold-text { color: #C5A059; }
         .container { padding: 80px 8%; }
 
         /* HEADER */
-        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: #111; border-bottom: 2px solid #C5A059; }
-        .logo-main img { height: 50px; }
-        nav a { color: #fff; margin-left: 30px; font-weight: bold; text-decoration: none; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: rgba(0,0,0,0.9); border-bottom: 1px solid #333; position: sticky; top: 0; z-index: 1000; }
+        .logo-main img { height: 45px; }
+        nav ul { list-style: none; display: flex; gap: 30px; margin: 0; }
+        nav a { color: #fff; text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: 0.3s; }
         nav a:hover { color: #C5A059; }
 
-        /* HERO */
-        .hero { height: 80vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('background.jpg'); background-size: cover; display: flex; align-items: center; justify-content: center; text-align: center; }
-        .hero h1 { font-size: 3rem; text-transform: uppercase; margin: 0; }
+        /* HERO BLOCK */
+        .hero { height: 90vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('background.jpg'); background-size: cover; background-position: center; display: flex; align-items: center; padding-left: 8%; }
+        .accent-line { width: 5px; height: 100px; background-color: #C5A059; margin-right: 20px; }
+        .hero h1 { font-size: 3.5rem; text-transform: uppercase; margin: 0; line-height: 1.1; }
 
-        /* CONTACTO Y MAPA */
+        /* SERVICIOS */
+        .grid-servicios { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .card { border: 1px solid #333; padding: 40px; text-align: center; transition: 0.3s; }
+        .card:hover { border-color: #C5A059; }
+
+        /* FORMULARIO */
         .contacto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
         .form-box { border: 1px solid #C5A059; padding: 40px; background: #111; }
-        input, textarea { width: 100%; background: #1a1a1a; border: 1px solid #C5A059; padding: 12px; margin-bottom: 15px; color: white; box-sizing: border-box; }
-        button { background: #C5A059; color: black; padding: 15px 30px; border: none; font-weight: bold; cursor: pointer; width: 100%; }
+        input, textarea { width: 100%; background: #1a1a1a; border: 1px solid #444; padding: 12px; margin-bottom: 15px; color: white; box-sizing: border-box; }
+        button { background: #C5A059; color: black; padding: 15px; border: none; font-weight: bold; cursor: pointer; width: 100%; }
 
         /* FOOTER */
         footer { background: #050505; padding: 50px 8%; border-top: 1px solid #333; }
-        .grupo-logos { display: flex; gap: 20px; align-items: center; margin-top: 15px; }
-        .logo-pequeno { width: 80px; filter: grayscale(20%); }
-
-        /* BOTÓN WHATSAPP FLOTANTE */
-        .wsp-btn { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        .footer-logos { display: flex; gap: 20px; align-items: center; margin-top: 15px; }
+        .logo-pequeno { width: 90px; filter: grayscale(20%); }
+        .wsp-btn { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; z-index: 1000; }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-main"><img src="gastulo.png" alt="Logo Gástulo"></div>
+        <div class="logo-main"><img src="gastulo.png" alt="Logo"></div>
         <nav>
-            <a href="#">INICIO</a>
-            <a href="#">NOSOTROS</a>
-            <a href="#">SERVICIOS</a>
-            <a href="#">CONTÁCTANOS</a>
+            <ul>
+                <li><a href="#">INICIO</a></li>
+                <li><a href="#">NOSOTROS</a></li>
+                <li><a href="#">SERVICIOS</a></li>
+                <li><a href="#">CONTÁCTANOS</a></li>
+            </ul>
         </nav>
     </header>
 
     <section class="hero">
-        <div>
-            <h1>Innovación constante,</h1>
-            <h1 class="gold-text">Resultados excepcionales</h1>
+        <div style="display: flex; align-items: center;">
+            <div class="accent-line"></div>
+            <div>
+                <h1>INNOVACIÓN CONSTANTE,</h1>
+                <h1 class="gold-text">RESULTADOS EXCEPCIONALES</h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2 class="gold-text">Nuestros Servicios</h2>
+        <div class="grid-servicios">
+            <div class="card">
+                <h3>INMOBILIARIA</h3>
+                <p>Tasación, levantamiento topográfico, regularización de fábrica, habilitaciones urbanas, alquileres y ventas.</p>
+            </div>
+            <div class="card">
+                <h3>CONSTRUCTORA</h3>
+                <p>Proyectos de construcción, remodelación, ampliaciones, edificaciones y reforzamiento de estructuras.</p>
+            </div>
         </div>
     </section>
 
     <section class="container contacto-grid">
         <div class="mapa">
-            <div style="width: 100%; height: 400px; background: #222; display: flex; align-items: center; justify-content: center;">Mapa de Ubicación</div>
+            <iframe src="https://www.google.com/maps/embed?..." width="100%" height="400" style="border:0;" allowfullscreen></iframe>
         </div>
         <div class="form-box">
             <h2 class="gold-text">Agenda una Consulta</h2>
@@ -78,14 +102,14 @@ v<!DOCTYPE html>
             </div>
             <div>
                 <p>Conoce nuestras otras empresas:</p>
-                <div class="grupo-logos">
+                <div class="footer-logos">
                     <img src="gastulo.png" class="logo-pequeno">
                     <img src="jl2.png" class="logo-pequeno">
                     <img src="fedas.png" class="logo-pequeno">
                 </div>
             </div>
         </div>
-        <p style="text-align: center; margin-top: 40px; color: #444; font-size: 0.8rem;">© Copyright 2026 | Gástulo Asesores y Constructores | Todos los Derechos Reservados.</p>
+        <p style="text-align: center; margin-top: 40px; color: #444; font-size: 0.8rem;">© Copyright 2026 | Gástulo Asesores y Constructores</p>
     </footer>
 
     <a href="https://wa.me/51945792645" class="wsp-btn" target="_blank">WhatsApp</a>
