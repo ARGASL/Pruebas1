@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Gástulo | Constructores y Asesores</title>
     <style>
-        /* ESTO PERMITE QUE EL SCROLL SEA SUAVE AL HACER CLICK */
+        /* SCROLL SUAVE PARA LOS LINKS */
         html { scroll-behavior: smooth; }
 
         /* RESET Y BASE */
@@ -13,18 +13,26 @@
         .gold { color: #C5A059; }
 
         /* NAVBAR PREMIUM */
-        header { display: flex; justify-content: space-between; align-items: center; padding: 30px 8%; position: absolute; width: 100%; z-index: 10; border-bottom: 1px solid rgba(197, 160, 89, 0.2); }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 30px 8%; position: absolute; width: 100%; z-index: 10; border-bottom: 1px solid rgba(197, 160, 89, 0.2); background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.4)); }
         .logo img { height: 40px; }
         nav a { color: #fff; margin-left: 40px; text-decoration: none; font-size: 0.8rem; letter-spacing: 2px; transition: 0.3s; }
         nav a:hover { color: #C5A059; }
 
-        /* HERO - EL CORAZÓN DEL INICIO */
+        /* HERO */
         .hero { height: 100vh; display: flex; align-items: center; padding-left: 8%; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('background.jpg') center/cover; }
         .hero-content { display: flex; align-items: center; gap: 30px; }
         .hero-line { width: 4px; height: 150px; background: #C5A059; }
         .hero-text h1 { font-size: 4rem; line-height: 1; margin-bottom: 20px; text-transform: uppercase; }
 
-        /* SECCIÓN DE SERVICIOS - ESTILO PDF */
+        /* SECCIÓN NOSOTROS PREMIUM */
+        .seccion-nosotros { padding: 100px 8%; background: #ffffff; color: #333; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .bloque-imagen { position: relative; }
+        .imagen-equipo { width: 100%; height: auto; border-radius: 4px; box-shadow: 20px 20px 0px 0px #C5A059; }
+        .titulo-sobre { font-size: 2.5rem; margin-bottom: 20px; font-weight: 300; }
+        .linea-dorada { width: 50px; height: 3px; background: #C5A059; margin-bottom: 30px; }
+        .texto-nosotros { line-height: 1.8; margin-bottom: 20px; text-align: justify; font-size: 1rem; color: #555; }
+
+        /* SERVICIOS */
         .services-home { padding: 80px 8%; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
         .service-card { border: 1px solid #222; padding: 50px; transition: 0.4s; }
         .service-card:hover { border-color: #C5A059; background: #0f0f0f; }
@@ -58,9 +66,17 @@
         </div>
     </section>
 
-    <section id="nosotros" style="padding: 80px 8%; background: #fff; color: #333;">
-        <h2 style="margin-bottom: 20px;">Sobre nosotros</h2>
-        <p>Somos un equipo interdisciplinario, compuesto por arquitectos, ingenieros, abogados, entre otros, que se dedican a transformar las ideas en realidad a través de una planificación rigurosa y una ejecución eficiente. Con una sólida base técnica y amplia experiencia en el sector, ofrecemos soluciones personalizadas y adaptadas a las necesidades de cada proyecto. Desde la concepción inicial hasta la entrega final, garantizamos un proceso eficiente y transparente, siempre poniendo al cliente en el centro de nuestros proyectos.</p>
+    <section id="nosotros" class="seccion-nosotros">
+        <div class="bloque-imagen">
+            <img src="inicionosotros.jpg" alt="Equipo de Gástulo" class="imagen-equipo">
+        </div>
+        <div>
+            <h2 class="titulo-sobre">Sobre nosotros</h2>
+            <div class="linea-dorada"></div>
+            <p class="texto-nosotros">Somos un equipo interdisciplinario, compuesto por arquitectos, ingenieros, abogados, entre otros, que se dedican a transformar las ideas en realidad a través de una planificación rigurosa y una ejecución eficiente.</p>
+            <p class="texto-nosotros">Con una sólida base técnica y amplia experiencia en el sector, ofrecemos soluciones personalizadas y adaptadas a las necesidades de cada proyecto.</p>
+            <p class="texto-nosotros">Desde la concepción inicial hasta la entrega final, garantizamos un proceso eficiente y transparente, siempre poniendo al cliente en el centro de nuestros proyectos.</p>
+        </div>
     </section>
 
     <section id="servicios" class="services-home">
