@@ -1,114 +1,145 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Gástulo | Constructores y Asesores</title>
-    <style>
-        /* RESET Y BASE */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; } /* HABILITA EL CLICK HACIA ABAJO */
-        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #0a0a0a; color: #fff; }
-        .gold { color: #C5A059; }
+    <meta charset="UTF-8">
+    <title>Gástulo | Constructores y Asesores</title>
+    <style>
+        /* RESET Y BASE */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #0a0a0a; color: #fff; }
+        .gold { color: #C5A059; }
 
-        /* NAVBAR PREMIUM */
-        header { 
-            display: flex; justify-content: space-between; align-items: center; 
-            padding: 30px 8%; position: absolute; width: 100%; z-index: 10; 
-            background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.4));
-            border-bottom: 1px solid rgba(197, 160, 89, 0.2); 
-        }
-        .logo img { height: 40px; }
-        nav a { color: #fff; margin-left: 40px; text-decoration: none; font-size: 0.8rem; letter-spacing: 2px; transition: 0.3s; }
-        nav a:hover { color: #C5A059; }
+        /* NAVBAR PREMIUM */
+        header { display: flex; justify-content: space-between; align-items: center; padding: 30px 8%; position: absolute; width: 100%; z-index: 10; border-bottom: 1px solid rgba(197, 160, 89, 0.2); }
+        .logo img { height: 40px; }
+        nav a { color: #fff; margin-left: 40px; text-decoration: none; font-size: 0.8rem; letter-spacing: 2px; transition: 0.3s; }
+        nav a:hover { color: #C5A059; }
 
-        /* HERO */
-        .hero { 
-            height: 100vh; display: flex; align-items: center; padding-left: 8%; 
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('background.jpg') center/cover no-repeat; 
-        }
-        .hero-content { display: flex; align-items: center; gap: 30px; }
-        .hero-line { width: 4px; height: 150px; background: #C5A059; }
-        .hero-text h1 { font-size: 4rem; line-height: 1; text-transform: uppercase; }
+        /* HERO - EL CORAZÓN DEL INICIO */
+        .hero { height: 100vh; display: flex; align-items: center; padding-left: 8%; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('background.jpg') center/cover; }
+        .hero-content { display: flex; align-items: center; gap: 30px; }
+        .hero-line { width: 4px; height: 150px; background: #C5A059; }
+        .hero-text h1 { font-size: 4rem; line-height: 1; margin-bottom: 20px; text-transform: uppercase; }
 
-        /* SECCIÓN NOSOTROS PREMIUM */
-        .seccion-premium { padding: 100px 8%; background: #ffffff; color: #333; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-        .bloque-imagen { position: relative; }
-        .imagen-equipo { width: 100%; border-radius: 4px; box-shadow: 20px 20px 0px 0px #C5A059; }
-        .titulo-sobre { font-size: 2.5rem; margin-bottom: 20px; font-weight: 300; }
-        .linea-dorada { width: 50px; height: 3px; background: #C5A059; margin-bottom: 30px; }
-        .texto-nosotros { line-height: 1.8; margin-bottom: 20px; text-align: justify; color: #555; }
+        /* SECCIÓN DE SERVICIOS - ESTILO PDF */
+        .services-home { padding: 80px 8%; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .service-card { border: 1px solid #222; padding: 50px; transition: 0.4s; }
+        .service-card:hover { border-color: #C5A059; background: #0f0f0f; }
 
-        /* SERVICIOS */
-        .services-home { padding: 80px 8%; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        .service-card { border: 1px solid #222; padding: 50px; transition: 0.4s; }
-        .service-card:hover { border-color: #C5A059; background: #0f0f0f; }
+        /* FOOTER */
+        footer { background: #050505; padding: 50px 8%; border-top: 1px solid #333; }
+        .footer-content { display: flex; justify-content: space-between; align-items: flex-start; }
+        .grupo-logos { display: flex; gap: 20px; align-items: center; margin-top: 20px; }
+        .logo-pequeno { width: 100px; height: auto; filter: grayscale(20%); transition: 0.3s; }
+        .logo-pequeno:hover { filter: grayscale(0%); transform: scale(1.05); }
 
-        /* FOOTER */
-        footer { background: #050505; padding: 50px 8%; border-top: 1px solid #333; }
-        .logo-pequeno { width: 100px; filter: grayscale(20%); transition: 0.3s; }
-        .logo-pequeno:hover { filter: grayscale(0%); transform: scale(1.05); }
-    </style>
+        /* HERO - EL CORAZÓN DEL INICIO */
+.hero { 
+    height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    padding-left: 8%; 
+    /* Aquí agregas la ruta de tu imagen de fondo */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('nosotros.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+/* NAVBAR PREMIUM */
+header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 30px 8%; 
+    position: absolute; 
+    width: 100%; 
+    z-index: 10; 
+    /* Cambia esto a un negro más sólido (ejemplo: 0.8 en lugar de transparencia total) */
+    background-color: rgba(0, 0, 0, 0.8); 
+    border-bottom: 1px solid rgba(197, 160, 89, 0.2); 
+}
+        header {
+    /* Un degradado lineal que va de negro a transparente */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.4));
+}
+    </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo"><img src="gastulo.png" alt="Gástulo"></div>
-        <nav>
-            <a href="#inicio">INICIO</a>
-            <a href="#nosotros">NOSOTROS</a>
-            <a href="#servicios">SERVICIOS</a>
-            <a href="#contacto">CONTÁCTANOS</a>
-        </nav>
-    </header>
+    <header>
+        <div class="logo"><img src="gastulo.png" alt="Gástulo"></div>
+        <nav>
+            <a href="#">INICIO</a>
+            <a href="#">NOSOTROS</a>
+            <a href="#">SERVICIOS</a>
+            <a href="#">CONTÁCTANOS</a>
+        </nav>
+    </header>
 
-    <section id="inicio" class="hero">
-        <div class="hero-content">
-            <div class="hero-line"></div>
-            <div class="hero-text">
-                <h1>INNOVACIÓN CONSTANTE,<br><span class="gold">RESULTADOS EXCEPCIONALES</span></h1>
-            </div>
-        </div>
-    </section>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-line"></div>
+            <div class="hero-text">
+                <h1>INNOVACIÓN CONSTANTE,<br><span class="gold">RESULTADOS EXCEPCIONALES</span></h1>
+            </div>
+        </div>
+    </section>
 
-    <section id="nosotros" class="seccion-premium">
-        <div class="bloque-imagen">
-            <img src="inicionosotros.jpg" alt="Equipo Gástulo" class="imagen-equipo">
-        </div>
-        <div>
-            <h2 class="titulo-sobre">Sobre nosotros</h2>
-            <div class="linea-dorada"></div>
-            <p class="texto-nosotros">Somos un equipo interdisciplinario, compuesto por arquitectos, ingenieros, abogados, entre otros, que se dedican a transformar las ideas en realidad a través de una planificación rigurosa y una ejecución eficiente.</p>
-            <p class="texto-nosotros">Con una sólida base técnica y amplia experiencia en el sector, ofrecemos soluciones personalizadas y adaptadas a las necesidades de cada proyecto.</p>
-            <p class="texto-nosotros">Desde la concepción inicial hasta la entrega final, garantizamos un proceso eficiente y transparente, siempre poniendo al cliente en el centro de nuestros proyectos.</p>
-        </div>
-    </section>
+<section id="nosotros" style="padding: 100px 8%; background: #ffffff; color: #333;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+        
+        <div class="bloque-imagen">
+            <img src="inicionosotros.jpg" alt="Equipo de Gástulo" style="width: 100%; height: auto; object-fit: cover;">
+        </div>
 
-    <section id="servicios" class="services-home">
-        <div class="service-card">
-            <h2 class="gold">INMOBILIARIA</h2>
-            <p>Tasaciones, topografía, regularización y gestión urbana con estándares de alta precisión.</p>
-        </div>
-        <div class="service-card">
-            <h2 class="gold">CONSTRUCTORA</h2>
-            <p>Ejecución de proyectos, remodelaciones, ampliaciones y reforzamiento estructural técnico.</p>
-        </div>
-    </section>
+        <div>
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px; font-weight: 300;">Sobre nosotros</h2>
+            <div style="width: 50px; height: 3px; background: #C5A059; margin-bottom: 30px;"></div>
+            
+            <p style="line-height: 1.8; margin-bottom: 20px; text-align: justify; font-size: 1rem;">
+                Somos un equipo interdisciplinario, compuesto por arquitectos, ingenieros, abogados, entre otros, que se dedican a transformar las ideas en realidad a través de una planificación rigurosa y una ejecución eficiente.
+            </p>
+            <p style="line-height: 1.8; margin-bottom: 20px; text-align: justify; font-size: 1rem;">
+                Con una sólida base técnica y amplia experiencia en el sector, ofrecemos soluciones personalizadas y adaptadas a las necesidades de cada proyecto.
+            </p>
+            <p style="line-height: 1.8; margin-bottom: 30px; text-align: justify; font-size: 1rem;">
+                Desde la concepción inicial hasta la entrega final, garantizamos un proceso eficiente y transparente, siempre poniendo al cliente en el centro de nuestros proyectos.
+            </p>
+        </div>
+    </div>
+</section>
 
-    <footer id="contacto">
-        <div style="display: flex; justify-content: space-between;">
-            <div>
-                <h4>CONTÁCTENOS</h4>
-                <p>📍 Calle Teruel N° 370 - Miraflores - Lima, Perú</p>
-                <p>📞 +51 945 792 645</p>
-                <p>✉️ asesores.constructores.gastulo@gmail.com</p>
-            </div>
-            <div class="grupo-logos">
-                <a href="https://jlabogados.pe"><img src="jl2.png" class="logo-pequeno"></a>
-                <a href="https://fedas.pe"><img src="fedas.png" class="logo-pequeno"></a>
-            </div>
-        </div>
-        <p style="text-align: center; margin-top: 40px; color: #444; font-size: 0.8rem;">© Copyright 2026 | Gástulo Asesores y Constructores</p>
-    </footer>
+ <section class="services-home">
+        <div class="service-card">
+            <h2 class="gold">INMOBILIARIA</h2>
+            <p>Tasaciones, topografía, regularización y gestión urbana con estándares de alta precisión.</p>
+        </div>
+        <div class="service-card">
+            <h2 class="gold">CONSTRUCTORA</h2>
+            <p>Ejecución de proyectos, remodelaciones, ampliaciones y reforzamiento estructural técnico.</p>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="contact-info">
+            <div>
+                <h4>CONTÁCTENOS</h4>
+                <p>📍 Calle Teruel N° 370 - Miraflores - Lima, Perú</p>
+                <p>📞 +51 945 792 645</p>
+                <p>✉️ asesores.constructores.gastulo@gmail.com</p>
+            </div>
+           <div>
+            <div style="display: flex; gap: 25px; justify-content: flex-end; align-items: center;">
+                <div class="grupo-logos">
+                    <a href="https://jlabogados.pe"><img src="jl2.png" class="logo-pequeno"></a>
+                    <a href="https://fedas.pe"><img src="fedas.png" class="logo-pequeno"></a>
+                </div>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 40px; color: #444; font-size: 0.8rem;">© Copyright 2026 | Gástulo Asesores y Constructores</p>
+    </footer>
+
+    <a href="https://wa.me/51945792645" class="wsp-btn" target="_blank">WhatsApp</a>
 
 </body>
-</html>
+</html> 
