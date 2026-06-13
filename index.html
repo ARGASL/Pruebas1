@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <title>Gástulo | Constructores y Asesores</title>
@@ -157,6 +158,32 @@ header {
     }
     section {
     scroll-margin-top: 50px; /* Ajusta este valor (100px) si necesitas que baje un poco más o menos */
+}
+        /* DISEÑO ADAPTABLE A CELULARES */
+@media (max-width: 768px) {
+    .contenedor-servicio {
+        grid-template-columns: 1fr;
+        padding: 40px 5%;
+        gap: 30px;
+    }
+    .sidebar {
+        border-right: none;
+        border-bottom: 1px solid #e5e5e5;
+        padding-bottom: 20px;
+    }
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 40px 5%;
+    }
+    .page-banner { 
+        padding-top: 100px; 
+    }
+    /* Ajuste para que el menú no se amontone en pantallas pequeñas */
+    nav a {
+        margin-left: 10px;
+        font-size: 0.7rem;
+    }
 }
     </style>
 </head>
