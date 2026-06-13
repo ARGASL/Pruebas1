@@ -161,28 +161,89 @@ header {
 }
         /* DISEÑO ADAPTABLE A CELULARES */
 @media (max-width: 768px) {
+    /* 1. SECCIONES GENERALES (Fuerza a que todo mida el ancho del celular) */
+    html, body {
+        overflow-x: hidden; /* Elimina el scroll horizontal molesto */
+        width: 100%;
+    }
+    
+    /* Si usaste un contenedor dividido al 50% en el inicio, esto lo repara */
+    .section, section, div[style*="display: flex"], div[style*="grid-template-columns"] {
+        flex-direction: column !important;
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+    }
+
+    /* 2. TEXTOS Y CABECERAS (Achica las letras para que no rompan la pantalla) */
+    h1, .page-banner h1 { 
+        font-size: 1.8rem !important; 
+    }
+    h2, [style*="font-size: 2.2rem"], [style*="font-size: 2.5rem"] { 
+        font-size: 1.6rem !important; 
+    }
+    h3, [style*="font-size: 1.5rem"] {
+        font-size: 1.3rem !important;
+    }
+
+    /* 3. MENU SUPERIOR (HEADER) */
+    header {
+        flex-direction: column !important;
+        gap: 15px;
+        padding: 15px 5% !important;
+        position: static !important; /* Evita que tape contenido en móviles antiguos */
+        background: #0a0a0a !important;
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    nav a {
+        margin-left: 0 !important; /* Quitamos el margen izquierdo molesto */
+        font-size: 0.75rem !important;
+        letter-spacing: 1px !important;
+    }
+
+    /* 4. IMÁGENES Y BLOQUES */
+    img, .contenedor-img-servicio, [style*="width: 50%"] {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    /* 5. INTERFAZ INTERNA (SERVICES1.HTML) */
     .contenedor-servicio {
-        grid-template-columns: 1fr;
-        padding: 40px 5%;
-        gap: 30px;
+        grid-template-columns: 1fr !important;
+        padding: 30px 5% !important;
+        gap: 30px !important;
     }
     .sidebar {
-        border-right: none;
-        border-bottom: 1px solid #e5e5e5;
-        padding-bottom: 20px;
+        border-right: none !important;
+        border-bottom: 1px solid #e5e5e5 !important;
+        padding-right: 0 !important;
+        padding-bottom: 20px !important;
+        display: flex !important;
+        flex-direction: column;
+        gap: 8px;
     }
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 40px 5%;
+    .sidebar-item {
+        padding: 12px 5px !important;
+        font-size: 0.9rem !important;
     }
     .page-banner { 
-        padding-top: 100px; 
+        padding: 100px 5% 40px 5% !important; 
     }
-    /* Ajuste para que el menú no se amontone en pantallas pequeñas */
-    nav a {
-        margin-left: 10px;
-        font-size: 0.7rem;
+
+    /* 6. PIE DE PÁGINA (FOOTER) */
+    .footer-container {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+        padding: 40px 5% !important;
+    }
+    .map-container {
+        height: 200px !important; /* Un mapa más compacto para el celular */
     }
 }
     </style>
