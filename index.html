@@ -103,32 +103,54 @@ header {
         margin: 0;
         line-height: 1.2;
     }
-        .footer-container {
+   .footer-container {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 40px;
+        grid-template-columns: 1.2fr 1fr 1.2fr; /* Tres columnas proporcionales */
+        gap: 50px;
         padding: 60px 8%;
-        background: #000;
-        color: #fff;
+        background: #000000;
+        color: #ffffff;
+        align-items: center; /* Alinea los elementos verticalmente al centro */
     }
+    
+    .contact-info p {
+        margin: 12px 0;
+        font-size: 0.95rem;
+        color: #e0e0e0;
+        line-height: 1.5;
+    }
+    
+    .map-container {
+        height: 180px;
+        width: 100%;
+        border-radius: 12px; /* Esquinas redondeadas modernas acordes al diseño */
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+
+    /* Botón flotante de WhatsApp estilo premium */
     .wsp-btn {
         position: fixed;
         bottom: 30px;
         right: 30px;
-        background: #25d366;
-        color: white;
-        padding: 15px 25px;
+        background: #25D366;
+        color: #ffffff;
+        padding: 14px 24px;
         border-radius: 50px;
         text-decoration: none;
-        font-weight: bold;
+        font-weight: 600;
+        font-size: 0.95rem;
         z-index: 1000;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+        transition: all 0.3s ease;
     }
-    .map-container {
-        height: 200px;
-        width: 100%;
-        border-radius: 10px;
-        overflow: hidden;
+
+    .wsp-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
     }
     </style>
 </head>
@@ -209,35 +231,51 @@ header {
     </div>
 </section>
     
-    <footer>
+  <footer>
     <div class="footer-container">
+        
         <div class="contact-info">
-            <h4 style="color: #C5A059;">CONTÁCTENOS</h4>
+            <h4 style="color: #C5A059; font-size: 1.1rem; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">Contáctenos</h4>
             <p>📍 Calle Teruel N° 370 - Miraflores - Lima, Perú</p>
             <p>📞 +51 945 792 645</p>
             <p>✉️ asesores.constructores.gastulo@gmail.com</p>
         </div>
 
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.196942698943!2d-77.03562302484393!3d-12.107993388094276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c86237885b5d%3A0x868b446a811579d4!2sCalle%20Teruel%20370%2C%20Miraflores%2015074!5e0!3m2!1ses-419!2spe!4v1714589999999!5m2!1ses-419!2spe" 
-            width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-
-        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 20px;">
-            <div class="grupo-logos" style="display: flex; gap: 20px;">
-                <a href="https://jlabogados.pe"><img src="jl2.png" style="height: 50px;"></a>
-                <a href="https://fedas.pe"><img src="fedas.png" style="height: 50px;"></a>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <div class="grupo-logos" style="display: flex; gap: 30px; align-items: center;">
+                <a href="https://jlabogados.pe" target="_blank" style="transition: opacity 0.3s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
+                    <img src="jl2.png" alt="J&L Abogados" style="height: 45px; width: auto; display: block;">
+                </a>
+                <a href="https://fedas.pe" target="_blank" style="transition: opacity 0.3s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
+                    <img src="fedas.png" alt="Fedas" style="height: 45px; width: auto; display: block;">
+                </a>
             </div>
         </div>
+
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.0374495919014!2d-77.0360814!3d-12.1095368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c940c003bd1d%3A0x508dc849555c204c!2sCalle%20Teruel%20370%2C%20Miraflores%2015074!5e0!3m2!1ses-419!2spe!4v1710000000000!5m2!1ses-419!2spe" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
     </div>
     
-    <p style="text-align: center; padding-bottom: 20px; color: #666; font-size: 0.8rem;">
+    <p style="text-align: center; padding: 25px 0; background: #000000; margin: 0; color: #555555; font-size: 0.8rem; border-top: 1px solid #111111; font-weight: 400;">
         © Copyright 2026 | Gástulo Asesores y Constructores
     </p>
 </footer>
 
 <a href="https://wa.me/51945792645" class="wsp-btn" target="_blank">
-    💬 WhatsApp
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.69-4.98c-.202-.101-1.194-.588-1.379-.653-.185-.066-.32-.099-.455.101-.134.2-.522.653-.64 1.293-.117.135-.235.145-.437.045-1.06-.532-1.793-.974-2.527-2.235-.19-.324.19-.301.545-1.011.062-.124.03-.232-.015-.333-.045-.101-.435-1.049-.596-1.44-.156-.381-.311-.329-.455-.333-.118-.005-.254-.006-.39-.006a.792.792 0 0 0-.573.268C3.528 4.571 3.036 5.04 3.036 6c0 1.96 1.425 3.854 1.625 4.122.2.269 2.804 4.28 6.788 5.998.948.41 1.687.656 2.269.842.953.303 1.82.261 2.51.158.766-.115 2.35-.96 2.678-1.887.329-.926.329-1.72.23-1.887-.099-.168-.32-.269-.522-.37z"/>
+    </svg>
+    WhatsApp
 </a>
 
 </body>
