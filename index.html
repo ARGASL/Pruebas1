@@ -161,121 +161,62 @@ header {
 }
         /* DISEÑO ADAPTABLE A CELULARES */
 @media (max-width: 768px) {
-    /* 1. CONTROL DE ANCHOS GENERALES */
+    /* 1. LIMPIEZA DE POSICIÓN Y ANCHO */
     html, body {
         overflow-x: hidden !important;
         width: 100% !important;
     }
-    
-    /* Fuerza a que cualquier sistema de columnas (flex o grid) se rompa a 1 sola columna */
-    .section, section, 
-    div[style*="display: flex"], 
-    div[style*="display:grid"], 
-    div[style*="grid-template-columns"] {
-        flex-direction: column !important;
-        grid-template-columns: 1fr !important;
-        width: 100% !important;
-        padding-left: 4% !important;
-        padding-right: 4% !important;
-        gap: 20px !important;
-    }
 
-    /* 2. ENFOQUE ULTRA AGRESIVO PARA EL FORMULARIO DE CONSULTA */
-    /* Busca cualquier contenedor de las tarjetas blancas del formulario y lo vuelve una sola columna */
-    form, .formulario-contenedor, div[style*="gap"] {
-        grid-template-columns: 1fr !important;
-        flex-direction: column !important;
-    }
-
-    /* Fuerza a que las tarjetas blancas (01, 02, etc.) midan el 100% del ancho móvil */
-    div[style*="background: white"], 
-    div[style*="background-color: #fff"],
-    div[style*="border-radius"] {
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-    }
-
-    /* Asegura que los inputs y selects no se salgan de sus tarjetas */
-    input, select, textarea {
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-
-    /* 3. TEXTOS Y CABECERAS */
-    h1, .page-banner h1, [style*="font-size: 3rem"] { 
-        font-size: 1.8rem !important; 
-    }
-    h2, [style*="font-size: 2.2rem"], [style*="font-size: 2.5rem"], .section-title { 
-        font-size: 1.6rem !important; 
-    }
-    h3, [style*="font-size: 1.5rem"] {
-        font-size: 1.3rem !important;
-    }
-
-    /* 4. MENU SUPERIOR COMPACTO */
+    /* 2. REPARACIÓN DEL HEADER Y SOLAPAMIENTO */
     header {
+        position: relative !important; /* Cambiamos a relative para que empuje el contenido hacia abajo */
+        background: #0a0a0a !important;
+        padding: 20px 5% !important;
+        display: flex !important;
         flex-direction: column !important;
-        gap: 10px !important;
-        padding: 15px 5% !important;
-        position: fixed !important;
-        background: rgba(10, 10, 10, 0.98) !important;
+        align-items: center !important;
         width: 100% !important;
+        height: auto !important;
     }
-    
+
     .logo img { 
-        height: 30px !important;
-        margin: 0 auto !important;
+        height: 40px !important; 
+        margin-bottom: 15px !important;
     }
-    
+
     nav {
         display: flex !important;
         justify-content: center !important;
         flex-wrap: wrap !important;
-        gap: 12px 18px !important;
+        gap: 10px 20px !important;
         width: 100% !important;
     }
-    
+
     nav a {
-        margin-left: 0 !important;
-        font-size: 0.7rem !important;
-        letter-spacing: 1px !important;
+        font-size: 0.8rem !important;
+        margin: 0 !important;
     }
 
-    /* 5. INTERFAZ INTERNA (SERVICES1.HTML) */
-    .contenedor-servicio {
-        grid-template-columns: 1fr !important;
-        padding: 30px 5% !important;
-        gap: 30px !important;
-        margin-top: 110px !important;
+    /* 3. EVITAR QUE LAS SECCIONES SE MONTEN */
+    section, .page-banner, .contenedor-servicio {
+        margin-top: 0 !important; /* Eliminamos márgenes negativos que puedan estar causando el solapamiento */
+        padding-top: 40px !important;
     }
-    .sidebar {
-        border-right: none !important;
-        border-bottom: 1px solid #e5e5e5 !important;
-        padding-right: 0 !important;
-        padding-bottom: 20px !important;
+
+    /* 4. FORMULARIO Y COLUMNAS */
+    div[style*="grid-template-columns"], 
+    .footer-container, 
+    .contenedor-servicio {
         display: flex !important;
         flex-direction: column !important;
-        gap: 8px !important;
-    }
-    .sidebar-item {
-        padding: 12px 5px !important;
-        font-size: 0.9rem !important;
-    }
-    .page-banner { 
-        padding: 120px 5% 40px 5% !important;
+        width: 100% !important;
     }
 
-    /* 6. PIE DE PÁGINA (FOOTER) */
-    .footer-container {
-        grid-template-columns: 1fr !important;
-        gap: 40px !important;
-        padding: 40px 5% !important;
-    }
-    .map-container {
-        height: 200px !important;
+    /* Forzar ancho en tarjetas */
+    div[style*="background"], div[style*="border"] {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
 }
     </style>
