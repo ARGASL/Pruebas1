@@ -152,20 +152,27 @@ header {
         transform: translateY(-3px);
         box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
     }
-        
+        html {
+        scroll-behavior: smooth;
+    }
+
+    /* Ajuste para que el título no quede escondido detrás del menú fijo */
+    section {
+        scroll-margin-top: 100px; 
+    }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo"><img src="gastulo.png" alt="Gástulo"></div>
-        <nav>
-            <a href="#">INICIO</a>
-            <a href="#">NOSOTROS</a>
-            <a href="#">SERVICIOS</a>
-            <a href="#">CONTÁCTANOS</a>
-        </nav>
-    </header>
+   <header>
+    <div class="logo"><img src="gastulo.png" alt="Gástulo"></div>
+    <nav>
+        <a href="#inicio">INICIO</a>
+        <a href="#nosotros">NOSOTROS</a>
+        <a href="#servicios">SERVICIOS</a>
+        <a href="#envia-consulta">CONTÁCTANOS</a>
+    </nav>
+</header>
     
     <section class="hero">
         <div class="hero-content">
@@ -176,46 +183,25 @@ header {
         </div>
     </section>
 
-¡Entendido perfectamente! El "Nosotros" con la imagen lateral es un clásico que equilibra muy bien el texto con la identidad visual.
-
-Aquí tienes la versión ajustada: imagen a la izquierda, texto a la derecha, usando Montserrat, fondo blanco y ese acabado profesional que estamos logrando.
-
-HTML
-<section id="nosotros" style="padding: 100px 8%; background: #ffffff; font-family: 'Montserrat', sans-serif;">
-    <div style="max-width: 1200px; margin: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+<section id="nosotros" style="padding: 100px 8%; background: #050505; color: #fff; font-family: 'Montserrat', sans-serif;">
+    <div style="max-width: 1200px; margin: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
         
-        <div style="width: 100%; height: 450px; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
-            <img src="nosotros (1).jpg" style="width: 100%; height: 100%; object-fit: cover;">
+        <div style="position: relative;">
+            <div style="width: 100%; height: 500px; border: 1px solid #C5A059; padding: 10px;">
+                <img src="nosotros (1).jpg" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(30%);">
+            </div>
+            <div style="position: absolute; bottom: -20px; right: -20px; width: 100px; height: 100px; border: 2px solid #C5A059; border-top: none; border-left: none;"></div>
         </div>
 
         <div>
-            <h2 style="color: #111; font-size: 2.5rem; font-weight: 700; margin-bottom: 30px; text-transform: uppercase; letter-spacing: -1px;">Sobre Nosotros</h2>
-            
-            <div style="display: flex; flex-direction: column; gap: 30px;">
-                <div style="display: flex; gap: 20px;">
-                    <span style="font-weight: 700; color: #C5A059; font-size: 1.2rem;">01.</span>
-                    <div>
-                        <h4 style="margin: 0 0 5px 0; font-size: 1.1rem; color: #111;">Equipo Multidisciplinario</h4>
-                        <p style="margin: 0; color: #555; line-height: 1.6; font-size: 0.95rem;">Arquitectos, ingenieros y abogados colaborando para transformar ideas en realidad con una planificación rigurosa.</p>
-                    </div>
-                </div>
-                
-                <div style="display: flex; gap: 20px;">
-                    <span style="font-weight: 700; color: #C5A059; font-size: 1.2rem;">02.</span>
-                    <div>
-                        <h4 style="margin: 0 0 5px 0; font-size: 1.1rem; color: #111;">Soluciones Técnicas</h4>
-                        <p style="margin: 0; color: #555; line-height: 1.6; font-size: 0.95rem;">Base técnica sólida y amplia experiencia para ofrecer soluciones personalizadas adaptadas a cada proyecto.</p>
-                    </div>
-                </div>
-
-                <div style="display: flex; gap: 20px;">
-                    <span style="font-weight: 700; color: #C5A059; font-size: 1.2rem;">03.</span>
-                    <div>
-                        <h4 style="margin: 0 0 5px 0; font-size: 1.1rem; color: #111;">Proceso Transparente</h4>
-                        <p style="margin: 0; color: #555; line-height: 1.6; font-size: 0.95rem;">Garantizamos eficiencia desde la concepción inicial hasta la entrega final, centrados en el cliente.</p>
-                    </div>
-                </div>
-            </div>
+            <h2 style="font-size: 2.8rem; font-weight: 700; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px;">Estrategia y Construcción</h2>
+            <p style="font-size: 1.1rem; color: #ccc; line-height: 1.8; margin-bottom: 25px;">
+                Somos una firma multidisciplinaria que integra la precisión de la ingeniería, la visión arquitectónica y el respaldo legal necesario para ejecutar proyectos de alta complejidad.
+            </p>
+            <p style="font-size: 1.1rem; color: #ccc; line-height: 1.8;">
+                Nuestra metodología se basa en la transparencia operativa y el cumplimiento de estándares técnicos rigurosos, garantizando que cada etapa del proyecto cumpla con los objetivos de eficiencia y rentabilidad exigidos por nuestros clientes.
+            </p>
+            <div style="margin-top: 40px; width: 60px; height: 3px; background: #C5A059;"></div>
         </div>
 
     </div>
