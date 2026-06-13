@@ -161,13 +161,12 @@ header {
 }
         /* DISEÑO ADAPTABLE A CELULARES */
 @media (max-width: 768px) {
-    /* 1. SECCIONES GENERALES (Fuerza a que todo mida el ancho del celular) */
+    /* 1. SECCIONES GENERALES */
     html, body {
-        overflow-x: hidden; /* Elimina el scroll horizontal molesto */
+        overflow-x: hidden;
         width: 100%;
     }
     
-    /* Si usaste un contenedor dividido al 50% en el inicio, esto lo repara */
     .section, section, div[style*="display: flex"], div[style*="grid-template-columns"] {
         flex-direction: column !important;
         grid-template-columns: 1fr !important;
@@ -176,7 +175,7 @@ header {
         padding-right: 5% !important;
     }
 
-    /* 2. TEXTOS Y CABECERAS (Achica las letras para que no rompan la pantalla) */
+    /* 2. TEXTOS Y CABECERAS */
     h1, .page-banner h1 { 
         font-size: 1.8rem !important; 
     }
@@ -187,23 +186,32 @@ header {
         font-size: 1.3rem !important;
     }
 
-    /* 3. MENU SUPERIOR (HEADER) */
+    /* 3. MENU SUPERIOR ULTRA AJUSTADO (CORRECCIÓN LOGO GIGANTE) */
     header {
-        flex-direction: column !important;
-        gap: 15px;
+        flex-direction: column !important; /* Mantiene orden vertical pero compacto */
+        gap: 10px !important;
         padding: 15px 5% !important;
-        position: static !important; /* Evita que tape contenido en móviles antiguos */
-        background: #0a0a0a !important;
+        position: fixed !important; /* Regresa a fijo arriba de forma fluida */
+        background: rgba(10, 10, 10, 0.98) !important;
+        width: 100% !important;
     }
+    
+    .logo img { 
+        height: 30px !important; /* Limita el tamaño del logo para que no se desborde */
+        margin: 0 auto !important;
+    }
+    
     nav {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 12px;
+        display: flex !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 12px 18px !important; /* Espaciado balanceado entre los enlaces */
+        width: 100% !important;
     }
+    
     nav a {
-        margin-left: 0 !important; /* Quitamos el margen izquierdo molesto */
-        font-size: 0.75rem !important;
+        margin-left: 0 !important;
+        font-size: 0.7rem !important; /* Letra pequeña y estilizada */
         letter-spacing: 1px !important;
     }
 
@@ -218,6 +226,7 @@ header {
         grid-template-columns: 1fr !important;
         padding: 30px 5% !important;
         gap: 30px !important;
+        margin-top: 110px !important; /* Compensa la barra fija en móvil */
     }
     .sidebar {
         border-right: none !important;
@@ -233,7 +242,7 @@ header {
         font-size: 0.9rem !important;
     }
     .page-banner { 
-        padding: 100px 5% 40px 5% !important; 
+        padding: 120px 5% 40px 5% !important; /* Añade espacio superior para el menú móvil */
     }
 
     /* 6. PIE DE PÁGINA (FOOTER) */
@@ -243,7 +252,7 @@ header {
         padding: 40px 5% !important;
     }
     .map-container {
-        height: 200px !important; /* Un mapa más compacto para el celular */
+        height: 200px !important;
     }
 }
     </style>
