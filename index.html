@@ -161,62 +161,40 @@ header {
 }
         /* DISEÑO ADAPTABLE A CELULARES */
 @media (max-width: 768px) {
-    /* 1. LIMPIEZA DE POSICIÓN Y ANCHO */
-    html, body {
-        overflow-x: hidden !important;
-        width: 100% !important;
+    /* 1. ESPACIADO GENERAL (Respiración entre bloques) */
+    section, .section, .page-banner, .contenedor-servicio {
+        padding-top: 60px !important;    /* Más espacio arriba de cada sección */
+        padding-bottom: 60px !important; /* Más espacio abajo */
+        margin-top: 0 !important;
     }
 
-    /* 2. REPARACIÓN DEL HEADER Y SOLAPAMIENTO */
+    /* 2. HEADER Y LOGO (Ajuste fino) */
     header {
-        position: relative !important; /* Cambiamos a relative para que empuje el contenido hacia abajo */
-        background: #0a0a0a !important;
-        padding: 20px 5% !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        width: 100% !important;
-        height: auto !important;
+        padding: 30px 5% !important;     /* Un poco más de aire al menú */
+        gap: 20px !important;
     }
-
+    
     .logo img { 
-        height: 40px !important; 
-        margin-bottom: 15px !important;
+        height: 35px !important;         /* Logo un poco más legible */
+        margin-bottom: 0 !important;
     }
 
-    nav {
-        display: flex !important;
-        justify-content: center !important;
-        flex-wrap: wrap !important;
-        gap: 10px 20px !important;
-        width: 100% !important;
-    }
-
-    nav a {
-        font-size: 0.8rem !important;
-        margin: 0 !important;
-    }
-
-    /* 3. EVITAR QUE LAS SECCIONES SE MONTEN */
-    section, .page-banner, .contenedor-servicio {
-        margin-top: 0 !important; /* Eliminamos márgenes negativos que puedan estar causando el solapamiento */
-        padding-top: 40px !important;
-    }
-
-    /* 4. FORMULARIO Y COLUMNAS */
-    div[style*="grid-template-columns"], 
-    .footer-container, 
-    .contenedor-servicio {
-        display: flex !important;
-        flex-direction: column !important;
-        width: 100% !important;
-    }
-
-    /* Forzar ancho en tarjetas */
+    /* 3. FORMULARIOS Y TARJETAS */
+    /* Añadimos separación entre las tarjetas 01 y 02 */
     div[style*="background"], div[style*="border"] {
-        width: 100% !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
+        margin-bottom: 25px !important;  /* Separa la tarjeta 01 de la 02 */
+        padding: 25px !important;        /* Margen interno para que el texto no toque el borde */
+    }
+
+    /* 4. TEXTOS */
+    h1 { font-size: 1.7rem !important; margin-bottom: 20px !important; }
+    h2 { font-size: 1.4rem !important; margin-bottom: 20px !important; }
+    p { line-height: 1.8 !important; }   /* Mejor legibilidad en celular */
+
+    /* 5. FOOTER (Mapa más alto para ser funcional) */
+    .map-container {
+        height: 250px !important;
+        margin-top: 20px !important;
     }
 }
     </style>
