@@ -81,8 +81,16 @@ header {
         border-color: #C5A059;
         background-color: #fafafa;
     }
-        #envia-consulta button:hover {
-        background: #b08e4f !important;
+/* Efecto de enfoque en los inputs */
+    #envia-consulta input:focus, #envia-consulta textarea:focus, #envia-consulta select:focus {
+        border-color: #C5A059 !important;
+        box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15);
+    }
+    /* Efecto hover en el botón */
+    #envia-consulta .btn-submit:hover {
+        background: #a88544 !important;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(168, 133, 68, 0.4);
     }
     </style>
 </head>
@@ -109,38 +117,55 @@ header {
         </div>
     </section>
 
-<section id="nosotros" style="padding: 100px 8%; background: #ffffff; color: #1a1a1a;">
-    <div style="max-width: 1200px; margin: auto; display: flex; gap: 80px; align-items: center;">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<section id="envia-consulta" style="position: relative; padding: 100px 8%; background-image: url('nosotros (1).jpg'); background-size: cover; background-position: center; background-attachment: fixed; font-family: 'Montserrat', sans-serif;">
+    
+    <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.65);"></div>
+
+    <div style="position: relative; z-index: 1; max-width: 1200px; margin: auto;">
         
-        <div style="flex: 1; position: relative;">
-            <div style="position: absolute; top: -30px; left: -30px; width: 100%; height: 100%; border: 1px solid #C5A059; z-index: 0;"></div>
-            <img src="inicionosotros.jpg" alt="Equipo Gástulo" style="width: 100%; display: block; position: relative; z-index: 1;">
-        </div>
+        <h2 style="color: #fff; font-size: 2.8rem; font-weight: 700; margin-bottom: 50px; text-transform: uppercase; text-align: center; letter-spacing: 2px;">Envía tu consulta</h2>
 
-        <div style="flex: 1;">
-            <h2 style="font-size: 3rem; margin-bottom: 30px; font-weight: 300; letter-spacing: -1px; text-transform: uppercase;">
-                Sobre <span style="font-weight: 700; color: #C5A059;">nosotros</span>
-            </h2>
+        <form style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 0;">
             
-            <div style="width: 80px; height: 2px; background: #C5A059; margin-bottom: 40px;"></div>
+            <div style="background: rgba(255, 255, 255, 0.98); padding: 40px; border-radius: 16px; border-top: 6px solid #C5A059; box-shadow: 0 15px 35px rgba(0,0,0,0.2); display: flex; flex-direction: column; gap: 20px;">
+                <span style="display: block; font-size: 1.3rem; color: #C5A059; font-weight: 700; margin-bottom: 5px;">01. Identificación</span>
+                
+                <input type="text" placeholder="Nombre y Apellido" required style="width: 100%; padding: 16px; border: 1px solid #e0e0e0; border-radius: 10px; background: #fff; font-size: 0.95rem; font-family: 'Montserrat', sans-serif; outline: none; transition: 0.3s; box-sizing: border-box;">
+                
+                <input type="tel" placeholder="Teléfono" required style="width: 100%; padding: 16px; border: 1px solid #e0e0e0; border-radius: 10px; background: #fff; font-size: 0.95rem; font-family: 'Montserrat', sans-serif; outline: none; transition: 0.3s; box-sizing: border-box;">
+                
+                <input type="email" placeholder="Correo Electrónico" required style="width: 100%; padding: 16px; border: 1px solid #e0e0e0; border-radius: 10px; background: #fff; font-size: 0.95rem; font-family: 'Montserrat', sans-serif; outline: none; transition: 0.3s; box-sizing: border-box;">
+            </div>
 
-            <p style="font-size: 1.1rem; line-height: 1.7; color: #444; margin-bottom: 25px; text-align: justify;">
-                Somos un equipo interdisciplinario, compuesto por arquitectos, ingenieros, abogados, entre otros, que se dedican a transformar las ideas en realidad a través de una planificación rigurosa y una ejecución eficiente.
-            </p>
-            
-            <p style="font-size: 1.1rem; line-height: 1.7; color: #444; margin-bottom: 25px; text-align: justify;">
-                Con una sólida base técnica y amplia experiencia en el sector, ofrecemos soluciones personalizadas y adaptadas a las necesidades de cada proyecto.
-            </p>
+            <div style="background: rgba(255, 255, 255, 0.98); padding: 40px; border-radius: 16px; border-top: 6px solid #C5A059; box-shadow: 0 15px 35px rgba(0,0,0,0.2); display: flex; flex-direction: column; gap: 20px;">
+                <span style="display: block; font-size: 1.3rem; color: #111; font-weight: 700; margin-bottom: 5px;">02. Especialidad</span>
+                
+                <p style="font-size: 0.9rem; color: #555; line-height: 1.5; margin: 0 0 5px 0; font-weight: 400;">
+                    Seleccione el área de atención requerida para derivar su caso al especialista correspondiente:
+                </p>
+                
+                <select required style="width: 100%; padding: 16px; border: 1px solid #e0e0e0; border-radius: 10px; background: #fff; font-size: 0.95rem; font-family: 'Montserrat', sans-serif; color: #444; cursor: pointer; outline: none; box-sizing: border-box;">
+                    <option value="" disabled selected>Seleccione un área...</option>
+                    <option value="inmobiliaria">Área Inmobiliaria</option>
+                    <option value="constructora">Área Constructora</option>
+                    <option value="asesoria">Asesoría Integral / Legal</option>
+                </select>
+            </div>
 
-            <ul style="list-style: none; margin-top: 30px;">
-                <li style="margin-bottom: 15px; font-weight: 600; display: flex; align-items: center;">
-                    <span style="color: #C5A059; margin-right: 15px;">■</span> Planificación Estratégica
-                </li>
-                <li style="margin-bottom: 15px; font-weight: 600; display: flex; align-items: center;">
-                    <span style="color: #C5A059; margin-right: 15px;">■</span> Ejecución de Alta Precisión
-                </li>
-            </ul>
-        </div>
+            <div style="background: rgba(255, 255, 255, 0.98); padding: 40px; border-radius: 16px; border-top: 6px solid #C5A059; box-shadow: 0 15px 35px rgba(0,0,0,0.2); display: flex; flex-direction: column; justify-content: space-between; gap: 20px;">
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <span style="display: block; font-size: 1.3rem; color: #b08e4f; font-weight: 700;">03. Detalles</span>
+                    <textarea placeholder="Describa brevemente su requerimiento, proyecto o consulta técnica..." required style="width: 100%; padding: 16px; border: 1px solid #e0e0e0; border-radius: 10px; background: #fff; font-size: 0.95rem; font-family: 'Montserrat', sans-serif; height: 110px; resize: none; outline: none; transition: 0.3s; box-sizing: border-box;"></textarea>
+                </div>
+                
+                <button type="submit" class="btn-submit" style="width: 100%; padding: 16px; background: #C5A059; color: #fff; border: none; border-radius: 10px; font-weight: 700; font-size: 0.95rem; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; box-sizing: border-box;">
+                    Enviar Consulta →
+                </button>
+            </div>
+
+        </form>
     </div>
 </section>
 
