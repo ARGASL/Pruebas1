@@ -152,6 +152,15 @@ header {
         transform: translateY(-3px);
         box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
     }
+        /* Desplazamiento suave para todos los enlaces internos */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Opcional: Ajuste de desplazamiento para que el título no quede pegado al borde superior */
+    section, footer {
+        scroll-margin-top: 80px; /* Ajusta este valor según la altura de tu menú */
+    }
     </style>
 </head>
 <body>
@@ -165,7 +174,13 @@ header {
             <a href="#">CONTÁCTANOS</a>
         </nav>
     </header>
-        
+
+<nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#envia-consulta">Contáctanos</a> </nav>
+    
     <section class="hero">
         <div class="hero-content">
             <div class="hero-line"></div>
@@ -175,32 +190,29 @@ header {
         </div>
     </section>
 
-<section id="nosotros" style="position: relative; padding: 100px 8%; background-image: url('nosotros (1).jpg'); background-size: cover; background-position: center; background-attachment: fixed; font-family: 'Montserrat', sans-serif;">
-    
-    <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.65);"></div>
-
-    <div style="position: relative; z-index: 1; max-width: 1200px; margin: auto;">
+<section id="nosotros" style="padding: 100px 8%; background: #ffffff; font-family: 'Montserrat', sans-serif;">
+    <div style="max-width: 1200px; margin: auto;">
         
-        <h2 style="color: #fff; font-size: 2.8rem; font-weight: 700; margin-bottom: 50px; text-transform: uppercase; text-align: center; letter-spacing: 2px;">Sobre Nosotros</h2>
+        <h2 style="color: #111; font-size: 2.8rem; font-weight: 700; margin-bottom: 60px; text-transform: uppercase; text-align: center; letter-spacing: 2px;">Sobre Nosotros</h2>
 
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;">
             
-            <div style="background: rgba(255, 255, 255, 0.98); padding: 40px; border-radius: 16px; border-top: 6px solid #C5A059; box-shadow: 0 15px 35px rgba(0,0,0,0.2);">
-                <span style="display: block; font-size: 1.8rem; color: #C5A059; font-weight: 700; margin-bottom: 15px;">01</span>
-                <h4 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 15px; color: #111; text-transform: uppercase;">Equipo Multidisciplinario</h4>
-                <p style="font-size: 0.95rem; color: #444; line-height: 1.6; margin: 0;">Arquitectos, ingenieros y abogados colaborando para transformar ideas en realidad con una planificación rigurosa.</p>
+            <div style="padding: 30px; text-align: center;">
+                <span style="display: block; font-size: 2.5rem; color: #C5A059; font-weight: 700; margin-bottom: 20px;">01</span>
+                <h4 style="font-size: 1.2rem; color: #111; font-weight: 700; margin-bottom: 15px; text-transform: uppercase;">Equipo Multidisciplinario</h4>
+                <p style="font-size: 0.95rem; color: #555; line-height: 1.6;">Arquitectos, ingenieros y abogados colaborando para transformar ideas en realidad con una planificación rigurosa.</p>
             </div>
 
-            <div style="background: rgba(255, 255, 255, 0.98); padding: 40px; border-radius: 16px; border-top: 6px solid #C5A059; box-shadow: 0 15px 35px rgba(0,0,0,0.2);">
-                <span style="display: block; font-size: 1.8rem; color: #C5A059; font-weight: 700; margin-bottom: 15px;">02</span>
-                <h4 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 15px; color: #111; text-transform: uppercase;">Soluciones Técnicas</h4>
-                <p style="font-size: 0.95rem; color: #444; line-height: 1.6; margin: 0;">Base técnica sólida y amplia experiencia para ofrecer soluciones personalizadas adaptadas a cada proyecto.</p>
+            <div style="padding: 30px; text-align: center;">
+                <span style="display: block; font-size: 2.5rem; color: #C5A059; font-weight: 700; margin-bottom: 20px;">02</span>
+                <h4 style="font-size: 1.2rem; color: #111; font-weight: 700; margin-bottom: 15px; text-transform: uppercase;">Soluciones Técnicas</h4>
+                <p style="font-size: 0.95rem; color: #555; line-height: 1.6;">Base técnica sólida y amplia experiencia para ofrecer soluciones personalizadas adaptadas a cada proyecto.</p>
             </div>
 
-            <div style="background: rgba(255, 255, 255, 0.98); padding: 40px; border-radius: 16px; border-top: 6px solid #C5A059; box-shadow: 0 15px 35px rgba(0,0,0,0.2);">
-                <span style="display: block; font-size: 1.8rem; color: #C5A059; font-weight: 700; margin-bottom: 15px;">03</span>
-                <h4 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 15px; color: #111; text-transform: uppercase;">Proceso Transparente</h4>
-                <p style="font-size: 0.95rem; color: #444; line-height: 1.6; margin: 0;">Garantizamos eficiencia desde la concepción inicial hasta la entrega final, centrados en el cliente.</p>
+            <div style="padding: 30px; text-align: center;">
+                <span style="display: block; font-size: 2.5rem; color: #C5A059; font-weight: 700; margin-bottom: 20px;">03</span>
+                <h4 style="font-size: 1.2rem; color: #111; font-weight: 700; margin-bottom: 15px; text-transform: uppercase;">Proceso Transparente</h4>
+                <p style="font-size: 0.95rem; color: #555; line-height: 1.6;">Garantizamos eficiencia desde la concepción inicial hasta la entrega final, centrados en el cliente.</p>
             </div>
 
         </div>
