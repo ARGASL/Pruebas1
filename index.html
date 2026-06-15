@@ -321,9 +321,18 @@ header {
 }
 
 @media (max-width: 768px) {
-    /* Esto pondrá un borde rojo grueso a TODOS los elementos que se estén desbordando */
-    * {
-        outline: 2px solid red !important;
+    /* 1. Bloquea el desbordamiento desde la raíz */
+    html, body {
+        width: 100vw !important;
+        overflow-x: hidden !important; /* Corta cualquier cosa que intente salir */
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* 2. Fuerza a que TODO lo que esté dentro de la página quepa */
+    body > * {
+        width: 100vw !important;
+        overflow-x: hidden !important;
     }
 }
     </style>
