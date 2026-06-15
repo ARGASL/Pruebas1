@@ -320,47 +320,19 @@ header {
 
 }
 
-    @media (max-width: 768px) {
-
-    html, body {
-
-        width: 100% !important;
-
-        overflow-x: hidden !important;
-
-        position: relative !important;
-
-    }
-
-    
-
-    /* Aplicamos aire a todos los contenedores principales */
-
-    section, header, footer, .services-home, .footer-container {
-
-        padding-left: 20px !important;  /* Margen interno a la izquierda */
-
-        padding-right: 20px !important; /* Margen interno a la derecha */
-
-        width: 100% !important;
-
-    }
-
-
-
-    /* Ajuste para las tarjetas de servicios para que no se salgan */
-
-    .service-card, div[style*="background"] {
-
-        max-width: calc(100% - 40px) !important; /* El 100% menos el espacio del aire */
-
-        margin-left: auto !important;
-
-        margin-right: auto !important;
-
-    }
-
-}
+   @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; padding: 20px 5%; }
+            nav a { margin: 0 10px; font-size: 0.7rem; }
+            .hero-text h1 { font-size: 2rem; }
+            #nosotros > div { grid-template-columns: 1fr !important; gap: 30px !important; }
+            
+            /* Corrección del formulario */
+            .form-responsive { display: flex !important; flex-direction: column !important; grid-template-columns: 1fr !important; }
+            .form-responsive > div { width: 100% !important; margin-bottom: 20px !important; }
+            
+            .footer-container { grid-template-columns: 1fr !important; }
+            .map-container { height: 200px; }
+        }
 
     </style>
 
