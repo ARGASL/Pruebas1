@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Gástulo | Constructora</title>
+    <style>
+        /* RESET Y BASE CORPORATIVA */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif !important; }
+        html { scroll-behavior: smooth; }
+        body { background: #ffffff; color: #111111; overflow-x: hidden; width: 100%; }
+        .gold { color: #C5A059; }
+        section { scroll-margin-top: 100px; }
+
+        /* NAVBAR PREMIUM */
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; position: fixed; top: 0; left: 0; width: 100%; z-index: 100; background: rgba(10, 10, 10, 0.98); border-bottom: 1px solid rgba(197, 160, 89, 0.2); flex-wrap: wrap; }
+        .logo img { height: 35px; display: block; }
+        nav { display: flex; gap: 20px; flex-wrap: wrap; }
+        nav a { color: #fff; text-decoration: none; font-size: 0.7rem; letter-spacing: 1.5px; font-weight: 400; transition: 0.3s; text-transform: uppercase; }
+        nav a:hover { color: #C5A059; }
+
+        /* BANNER */
+        .page-banner { background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('construccion-banner.jpg') center/cover no-repeat; padding: 120px 5% 50px 5%; color: white; }
+        .page-banner h1 { font-size: 1.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 5px; }
+        .page-banner p { color: #C5A059; font-size: 0.85rem; letter-spacing: 1px; }
+
+        /* LAYOUT */
+        .contenedor-servicio { display: grid; grid-template-columns: 280px 1fr; gap: 40px; padding: 60px 5%; max-width: 1300px; margin: auto; align-items: start; }
+        .sidebar { border-right: 1px solid #e5e5e5; padding-right: 20px; position: sticky; top: 100px; }
+        .sidebar-item { display: flex; align-items: center; gap: 12px; width: 100%; background: none; border: none; border-bottom: 1px solid #f0f0f0; padding: 15px 5px; color: #444; text-align: left; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
+        .sidebar-item:hover, .sidebar-item.active { color: #C5A059; padding-left: 10px; border-bottom: 1px solid #C5A059; }
+
+        .contenido-dinamico { animation: fadeIn 0.5s ease; }
+        .contenido-dinamico h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 20px; color: #111; }
+        .contenedor-img-servicio { width: 100%; height: 300px; overflow: hidden; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .contenido-dinamico img { width: 100%; height: 100%; object-fit: cover; }
+        .contenido-dinamico p { line-height: 1.7; color: #555; font-size: 1rem; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Footer y WSP igual que tu archivo anterior... */
+        footer { background: #000000; color: #ffffff; }
+        .footer-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 60px 5%; }
+        .wsp-btn { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: #ffffff; padding: 12px 20px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.85rem; z-index: 1000; display: flex; align-items: center; gap: 8px; }
+
+        /* Responsive simplificado */
+        @media screen and (max-width: 900px) { .contenedor-servicio { grid-template-columns: 1fr; } .sidebar { position: static; display: flex; flex-wrap: wrap; gap: 10px; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo"><img src="gastulo.png" alt="Gástulo"></div>
+    <nav>
+        <a href="index.html">INICIO</a>
+        <a href="#contacto-footer">CONTÁCTANOS</a>
+    </nav>
+</header>
+
+<div class="page-banner">
+    <h1>Constructora</h1>
+    <p>Ingeniería y ejecución con estándares de excelencia</p>
+</div>
+
+<section class="contenedor-servicio">
+    <aside class="sidebar">
+        <button class="sidebar-item active" onclick="cambiarServicio('ejecucion', this)">Ejecución de Proyectos</button>
+        <button class="sidebar-item" onclick="cambiarServicio('remodelaciones', this)">Remodelaciones</button>
+        <button class="sidebar-item" onclick="cambiarServicio('ampliaciones', this)">Ampliaciones</button>
+        <button class="sidebar-item" onclick="cambiarServicio('reforzamiento', this)">Reforzamiento Estructural</button>
+    </aside>
+
+    <main class="contenido-dinamico" id="contenido-servicio">
+        <h2 id="servicio-titulo">Ejecución de Proyectos</h2>
+        <div class="contenedor-img-servicio">
+            <img id="servicio-imagen" src="ejecucion.jpg" alt="Servicio">
+        </div>
+        <p id="servicio-descripcion">
+            Desarrollamos proyectos de ingeniería civil integral, desde la planificación técnica hasta la entrega llave en mano, garantizando cumplimiento de plazos y alta calidad constructiva.
+        </p>
+    </main>
+</section>
+
+<footer id="contacto-footer">
+    </footer>
+
+<script>
+    const serviciosDatos = {
+        ejecucion: {
+            titulo: "Ejecución de Proyectos",
+            imagen: "ejecucion.jpg",
+            descripcion: "Desarrollamos proyectos de ingeniería civil integral, desde la planificación técnica hasta la entrega llave en mano, garantizando cumplimiento de plazos y alta calidad constructiva."
+        },
+        remodelaciones: {
+            titulo: "Remodelaciones",
+            imagen: "remodelacion.jpg",
+            descripcion: "Modernizamos y transformamos espacios existentes optimizando la funcionalidad, el diseño arquitectónico y la eficiencia de las instalaciones actuales."
+        },
+        ampliaciones: {
+            titulo: "Ampliaciones",
+            imagen: "ampliacion.jpg",
+            descripcion: "Realizamos ampliaciones de áreas construidas con total integración estructural, respetando la normativa técnica vigente y la estética de la edificación original."
+        },
+        reforzamiento: {
+            titulo: "Reforzamiento Estructural",
+            imagen: "reforzamiento.jpg",
+            descripcion: "Evaluación y reforzamiento de elementos estructurales para elevar la capacidad portante y garantizar la seguridad sísmica de sus edificaciones."
+        }
+    };
+
+    function cambiarServicio(clave, botonElemento) {
+        const info = serviciosDatos[clave];
+        document.getElementById('servicio-titulo').innerText = info.titulo;
+        document.getElementById('servicio-imagen').src = info.imagen;
+        document.getElementById('servicio-descripcion').innerText = info.descripcion;
+        document.querySelectorAll('.sidebar-item').forEach(btn => btn.classList.remove('active'));
+        botonElemento.classList.add('active');
+    }
+</script>
