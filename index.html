@@ -320,28 +320,18 @@ header {
 
 }
 
-   @media (max-width: 768px) {
-            header { flex-direction: column; gap: 15px; padding: 20px 5%; }
-            nav a { margin: 0 10px; font-size: 0.7rem; }
-            .hero-text h1 { font-size: 2rem; }
-            #nosotros > div { grid-template-columns: 1fr !important; gap: 30px !important; }
-            
-            /* Corrección del formulario */
-            .form-responsive { display: flex !important; flex-direction: column !important; grid-template-columns: 1fr !important; }
-            .form-responsive > div { width: 100% !important; margin-bottom: 20px !important; }
-            
-            .footer-container { grid-template-columns: 1fr !important; }
-            .map-container { height: 200px; }
-        }
-        /* CORRECCIÓN DE ESPACIO LATERAL MÓVIL */
-    html, body {
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-    /* RESET Y BASE */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    /* ... el resto de tu código queda EXACTAMENTE IGUAL ... */
+   /* REGLAS PARA RESPONSIVE (MANTENIENDO DISEÑO) */
+@media (max-width: 768px) {
+    header { flex-direction: column !important; padding: 20px 5% !important; }
+    nav a { margin: 10px 5px !important; font-size: 0.7rem !important; }
+    .hero-text h1 { font-size: 1.8rem !important; }
+    
+    /* Forzar los grid a una sola columna */
+    #nosotros > div { grid-template-columns: 1fr !important; gap: 30px !important; padding: 0 5% !important; }
+    #envia-consulta form { grid-template-columns: 1fr !important; }
+    .footer-container { grid-template-columns: 1fr !important; padding: 40px 5% !important; }
+    .map-container { height: 200px !important; }
+}
 
     </style>
 
