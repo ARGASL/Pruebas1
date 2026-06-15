@@ -321,18 +321,26 @@ header {
 }
 
 @media (max-width: 768px) {
-    /* 1. Bloquea el desbordamiento desde la raíz */
-    html, body {
-        width: 100vw !important;
-        overflow-x: hidden !important; /* Corta cualquier cosa que intente salir */
-        margin: 0 !important;
-        padding: 0 !important;
+    /* 1. Reset para el contenedor principal de contenido */
+    .seccion-contenido, section, .contenedor-principal {
+        width: 100% !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
     }
 
-    /* 2. Fuerza a que TODO lo que esté dentro de la página quepa */
-    body > * {
-        width: 100vw !important;
-        overflow-x: hidden !important;
+    /* 2. Fuerza a que las imágenes no desborden la sección */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+        display: block !important;
+    }
+
+    /* 3. Evita que los textos largos fuercen el ancho */
+    p, h1, h2, h3 {
+        word-wrap: break-word !important;
+        max-width: 100% !important;
     }
 }
     </style>
