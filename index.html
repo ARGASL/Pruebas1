@@ -320,17 +320,28 @@ header {
 
 }
 
-   /* REGLAS PARA RESPONSIVE (MANTENIENDO DISEÑO) */
-@media (max-width: 768px) {
-    header { flex-direction: column !important; padding: 20px 5% !important; }
-    nav a { margin: 10px 5px !important; font-size: 0.7rem !important; }
-    .hero-text h1 { font-size: 1.8rem !important; }
-    
-    /* Forzar los grid a una sola columna */
-    #nosotros > div { grid-template-columns: 1fr !important; gap: 30px !important; padding: 0 5% !important; }
-    #envia-consulta form { grid-template-columns: 1fr !important; }
-    .footer-container { grid-template-columns: 1fr !important; padding: 40px 5% !important; }
-    .map-container { height: 200px !important; }
+/* SOLUCIÓN FINAL PARA EL DESBORDAMIENTO EN MÓVILES */
+@media screen and (max-width: 768px) {
+    html, body {
+        width: 100vw !important;
+        overflow-x: hidden !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Forzamos a todos los contenedores principales a respetar el ancho de pantalla */
+    body > * {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Corregimos el desborde de las imágenes */
+    img {
+        max-width: 100vw !important;
+        height: auto !important;
+    }
 }
 
     </style>
