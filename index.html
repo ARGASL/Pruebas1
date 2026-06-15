@@ -159,16 +159,25 @@ header {
     section {
     scroll-margin-top: 50px; /* Ajusta este valor (100px) si necesitas que baje un poco más o menos */
 }
-       /* Corrección de seguridad para móviles */
-@media (max-width: 768px) {
+    @media (max-width: 768px) {
     html, body {
         width: 100% !important;
         overflow-x: hidden !important;
         position: relative !important;
     }
-    * {
-        max-width: 100vw !important;
-        box-sizing: border-box !important;
+    
+    /* Aplicamos aire a todos los contenedores principales */
+    section, header, footer, .services-home, .footer-container {
+        padding-left: 20px !important;  /* Margen interno a la izquierda */
+        padding-right: 20px !important; /* Margen interno a la derecha */
+        width: 100% !important;
+    }
+
+    /* Ajuste para las tarjetas de servicios para que no se salgan */
+    .service-card, div[style*="background"] {
+        max-width: calc(100% - 40px) !important; /* El 100% menos el espacio del aire */
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
 }
     </style>
