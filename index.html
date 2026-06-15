@@ -333,6 +333,15 @@ header {
             .footer-container { grid-template-columns: 1fr !important; }
             .map-container { height: 200px; }
         }
+        /* CORRECCIÓN DE ESPACIO LATERAL MÓVIL */
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* RESET Y BASE */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    /* ... el resto de tu código queda EXACTAMENTE IGUAL ... */
 
     </style>
 
