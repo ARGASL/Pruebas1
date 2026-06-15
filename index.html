@@ -159,20 +159,17 @@ header {
     section {
     scroll-margin-top: 50px; /* Ajusta este valor (100px) si necesitas que baje un poco más o menos */
 }
-        /* DISEÑO ADAPTABLE A CELULARES */
+       /* Corrección de seguridad para móviles */
 @media (max-width: 768px) {
-    /* Reseteo agresivo para móviles */
-    body, html {
-        width: 100vw !important;
+    html, body {
+        width: 100% !important;
         overflow-x: hidden !important;
-        margin: 0 !important;
-        padding: 0 !important;
         position: relative !important;
     }
-}
-        img {
-    max-width: 100% !important;
-    height: auto !important;
+    * {
+        max-width: 100vw !important;
+        box-sizing: border-box !important;
+    }
 }
     </style>
 </head>
