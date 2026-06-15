@@ -320,30 +320,23 @@ header {
 
 }
 
-/* SOLUCIÓN FINAL PARA EL DESBORDAMIENTO EN MÓVILES */
-@media screen and (max-width: 768px) {
-    html, body {
-        width: 100vw !important;
-        overflow-x: hidden !important;
+@media (max-width: 768px) {
+    /* Reseteamos absolutamente todo lo que tenga ancho */
+    *, *:before, *:after {
+        width: 100% !important;
+        max-width: 100% !important;
         margin: 0 !important;
         padding: 0 !important;
-    }
-
-    /* Forzamos a todos los contenedores principales a respetar el ancho de pantalla */
-    body > * {
-        width: 100vw !important;
-        max-width: 100vw !important;
-        overflow-x: hidden !important;
         box-sizing: border-box !important;
+        overflow-x: hidden !important;
+        display: block !important; /* Fuerza a todos a comportarse como bloques simples */
     }
-
-    /* Corregimos el desborde de las imágenes */
-    img {
-        max-width: 100vw !important;
-        height: auto !important;
+    
+    html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
     }
 }
-
     </style>
 
 </head>
