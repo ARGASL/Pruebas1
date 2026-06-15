@@ -321,23 +321,9 @@ header {
 }
 
 @media (max-width: 768px) {
-    /* Fuerza a cualquier elemento hijo a respetar los márgenes */
-    section *, .contenedor-servicio *, .footer-container * {
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-        padding-left: 10px !important;  /* Margen interno para que el texto no toque el borde */
-        padding-right: 10px !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-    }
-
-    /* Corrección de imágenes para que no se desborden nunca */
-    img {
-        width: auto !important;
-        max-width: 90% !important;
-        display: block !important;
-        margin: 10px auto !important;
+    /* Esto pondrá un borde rojo grueso a TODOS los elementos que se estén desbordando */
+    * {
+        outline: 2px solid red !important;
     }
 }
     </style>
