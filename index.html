@@ -6,185 +6,54 @@
     <meta charset="UTF-8">
     <title>Gástulo | Constructores y Asesores</title>
     <style>
-        
         /* RESET Y BASE */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #0a0a0a; color: #fff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif !important; }
+        body { background: #0a0a0a; color: #fff; overflow-x: hidden; }
         .gold { color: #C5A059; }
 
         /* NAVBAR PREMIUM */
-        header { display: flex; justify-content: space-between; align-items: center; padding: 30px 8%; position: absolute; width: 100%; z-index: 10; border-bottom: 1px solid rgba(197, 160, 89, 0.2); }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 30px 8%; position: absolute; width: 100%; z-index: 10; background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.4)); border-bottom: 1px solid rgba(197, 160, 89, 0.2); }
         .logo img { height: 40px; }
         nav a { color: #fff; margin-left: 40px; text-decoration: none; font-size: 0.8rem; letter-spacing: 2px; transition: 0.3s; }
         nav a:hover { color: #C5A059; }
 
-        /* HERO - EL CORAZÓN DEL INICIO */
-        .hero { height: 100vh; display: flex; align-items: center; padding-left: 8%; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('background.jpg') center/cover; }
+        /* HERO */
+        .hero { height: 100vh; display: flex; align-items: center; padding-left: 8%; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('nosotros.jpg') center/cover no-repeat; }
         .hero-content { display: flex; align-items: center; gap: 30px; }
         .hero-line { width: 4px; height: 150px; background: #C5A059; }
         .hero-text h1 { font-size: 4rem; line-height: 1; margin-bottom: 20px; text-transform: uppercase; }
 
-        /* SECCIÓN DE SERVICIOS - ESTILO PDF */
+        /* SERVICIOS */
         .services-home { padding: 80px 8%; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
         .service-card { border: 1px solid #222; padding: 50px; transition: 0.4s; }
-        .service-card:hover { border-color: #C5A059; background: #0f0f0f; }
 
         /* FOOTER */
-        footer { background: #050505; padding: 50px 8%; border-top: 1px solid #333; }
-        .footer-content { display: flex; justify-content: space-between; align-items: flex-start; }
-        .grupo-logos { display: flex; gap: 20px; align-items: center; margin-top: 20px; }
-        .logo-pequeno { width: 100px; height: auto; filter: grayscale(20%); transition: 0.3s; }
-        .logo-pequeno:hover { filter: grayscale(0%); transform: scale(1.05); }
+        footer { background: #000; padding: 50px 8%; border-top: 1px solid #333; }
+        .footer-container { display: grid; grid-template-columns: 1.2fr 1.8fr; gap: 60px; align-items: start; }
+        .map-container { height: 280px; width: 100%; border-radius: 12px; overflow: hidden; }
 
-        /* HERO - EL CORAZÓN DEL INICIO */
-.hero { 
-    height: 100vh; 
-    display: flex; 
-    align-items: center; 
-    padding-left: 8%; 
-    
-    /* Aquí agregas la ruta de tu imagen de fondo */
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('nosotros.jpg'); 
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat;
-}
+        /* BOTÓN WHATSAPP */
+        .wsp-btn { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: #fff; padding: 14px 24px; border-radius: 50px; text-decoration: none; font-weight: 600; z-index: 1000; display: flex; align-items: center; gap: 8px; }
 
-/* NAVBAR PREMIUM */
-header { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 30px 8%; 
-    position: absolute; 
-    width: 100%; 
-    z-index: 10; 
-
-    /* Cambia esto a un negro más sólido (ejemplo: 0.8 en lugar de transparencia total) */
-    background-color: rgba(0, 0, 0, 0.8); 
-    border-bottom: 1px solid rgba(197, 160, 89, 0.2); 
-}
-
-        header {
-    /* Un degradado lineal que va de negro a transparente */
-    background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.4));
-}
-        #nosotros .bloque-imagen:hover {
-        transform: translateY(-10px);
-    }
-    #nosotros .hover-overlay:hover {
-        opacity: 1;
-    }
-    #nosotros a:hover {
-        background: #C5A059;
-        color: #fff;
-    }
-        #nosotros .div > div:hover {
-        border-color: #C5A059;
-        background-color: #fafafa;
-    }
-/* Efecto de enfoque en los inputs */
-    #envia-consulta input:focus, #envia-consulta textarea:focus, #envia-consulta select:focus {
-        border-color: #C5A059 !important;
-        box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15);
-    }
-    /* Efecto hover en el botón */
-    #envia-consulta .btn-submit:hover {
-        background: #a88544 !important;
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(168, 133, 68, 0.4);
-    }
-        /* Aplicar la fuente a todo el sitio */
-    * {
-        font-family: 'Montserrat', sans-serif !important;
-        box-sizing: border-box; /* Esto evita problemas de diseño con los bordes */
-    }
-    /* Mejora global para todos los títulos */
-    h1, h2, h3, h4, h5, h6 {
-        margin: 0;
-        line-height: 1.2;
-    }
-  .footer-container {
-        display: grid;
-        grid-template-columns: 1.2fr 1.8fr; /* Dos columnas para un balance perfecto */
-        gap: 60px;
-        padding: 60px 8%;
-        background: #000000;
-        color: #ffffff;
-        align-items: start; /* Alineación arriba para que el flujo de texto sea natural */
-    }
-    
-    .contact-info p {
-        margin: 12px 0;
-        font-size: 0.95rem;
-        color: #e0e0e0;
-        line-height: 1.5;
-    }
-    
-    .map-container {
-        height: 280px; /* Un poco más alto para aprovechar el espacio de la derecha */
-        width: 100%;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-    }
-
-    /* Botón flotante de WhatsApp */
-    .wsp-btn {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        background: #25D366;
-        color: #ffffff;
-        padding: 14px 24px;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 0.95rem;
-        z-index: 1000;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
-        transition: all 0.3s ease;
-    }
-
-    .wsp-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
-    }
-        html {
-        scroll-behavior: smooth;
-    }
-    section {
-    scroll-margin-top: 50px; /* Ajusta este valor (100px) si necesitas que baje un poco más o menos */
-}
-    @media (max-width: 768px) {
-    html, body {
-        width: 100% !important;
-        overflow-x: hidden !important;
-        position: relative !important;
-    }
-    
-    /* Aplicamos aire a todos los contenedores principales */
-    section, header, footer, .services-home, .footer-container {
-        padding-left: 20px !important;  /* Margen interno a la izquierda */
-        padding-right: 20px !important; /* Margen interno a la derecha */
-        width: 100% !important;
-    }
-
-    /* Ajuste para las tarjetas de servicios para que no se salgan */
-    .service-card, div[style*="background"] {
-        max-width: calc(100% - 40px) !important; /* El 100% menos el espacio del aire */
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
-}
+        /* AJUSTES RESPONSIVE (MÓVIL) */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; padding: 20px 5%; }
+            nav a { margin: 0 10px; font-size: 0.7rem; }
+            .hero-text h1 { font-size: 2rem; }
+            #nosotros > div { grid-template-columns: 1fr !important; gap: 30px !important; }
+            
+            /* Corrección del formulario */
+            .form-responsive { display: flex !important; flex-direction: column !important; grid-template-columns: 1fr !important; }
+            .form-responsive > div { width: 100% !important; margin-bottom: 20px !important; }
+            
+            .footer-container { grid-template-columns: 1fr !important; }
+            .map-container { height: 200px; }
+        }
     </style>
 </head>
 <body>
 
-   <header>
+<header>
     <div class="logo"><img src="gastulo.png" alt="Gástulo"></div>
     <nav>
         <a href="#inicio">INICIO</a>
@@ -194,157 +63,61 @@ header {
     </nav>
 </header>
     
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-line"></div>
-            <div class="hero-text">
-                <h1>INNOVACIÓN CONSTANTE,<br><span class="gold">RESULTADOS EXCEPCIONALES</span></h1>
-            </div>
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-line"></div>
+        <div class="hero-text">
+            <h1>INNOVACIÓN CONSTANTE,<br><span class="gold">RESULTADOS EXCEPCIONALES</span></h1>
         </div>
-    </section>
-
-<section id="nosotros" style="padding: 120px 8%; background: #ffffff; color: #111111;">
-    <div style="max-width: 1300px; margin: auto; display: grid; grid-template-columns: 1fr 1.1fr; gap: 70px; align-items: center;">
-        
-        <div style="width: 100%; height: 480px; border-radius: 4px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.08);">
-            <img src="nosotros (2).jpg" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-
-        <div style="padding-right: 20px;">
-            <span style="color: #C5A059; text-transform: uppercase; letter-spacing: 3px; font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 15px;">Conócenos</span>
-            <h2 style="font-size: 2.8rem; font-weight: 700; margin-bottom: 30px; text-transform: uppercase; letter-spacing: -0.5px; color: #111; line-height: 1.2;">Estrategia Integral Corporativa</h2>
-            
-            <p style="font-size: 1.05rem; color: #444; line-height: 1.8; margin-bottom: 25px; font-weight: 400;">
-                Somos una firma multidisciplinaria enfocada en brindar soluciones de alto valor. Integramos de manera eficiente la precisión técnica de la ingeniería y la visión inmobiliaria con el respaldo legal definitivo para asegurar el éxito de cada operación.
-            </p>
-            <p style="font-size: 1.05rem; color: #444; line-height: 1.8; font-weight: 400;">
-                Nuestra metodología se basa en la transparencia operativa, mitigando riesgos y garantizando un estándar de calidad corporativo que responde a los objetivos de inversión de nuestros clientes.
-            </p>
-            
-            <div style="margin-top: 35px; width: 60px; height: 3px; background: #C5A059;"></div>
-        </div>
-
     </div>
 </section>
 
-<section id="servicios" style="padding: 100px 8%; background: #000; color: #fff;">
+<section id="nosotros" style="padding: 80px 8%; background: #fff; color: #111;">
+    <div style="max-width: 1300px; margin: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center;">
+        <div style="width: 100%; height: 400px; border-radius: 4px; overflow: hidden;"><img src="nosotros (2).jpg" style="width: 100%; height: 100%; object-fit: cover;"></div>
+        <div>
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Estrategia Integral Corporativa</h2>
+            <p style="line-height: 1.8; color: #444;">Somos una firma multidisciplinaria enfocada en brindar soluciones de alto valor. Integramos ingeniería, inmobiliaria y respaldo legal.</p>
+        </div>
+    </div>
+</section>
+
+<section id="envia-consulta" style="padding: 100px 8%; background: #000;">
     <div style="max-width: 1200px; margin: auto;">
-        
-        <div style="margin-bottom: 60px; text-align: center;">
-            <span style="color: #C5A059; letter-spacing: 3px; font-weight: 600; text-transform: uppercase; font-size: 0.9rem;">Áreas de especialidad</span>
-            <h2 style="font-size: 2.8rem; margin-top: 15px; text-transform: uppercase; font-weight: 700;">Nuestros Servicios</h2>
-            <div style="width: 80px; height: 3px; background: #C5A059; margin: 20px auto 0;"></div>
-        </div>
-    
-    <a href="services1.html" style="text-decoration: none; display: block; color: inherit;">
-        <div style="border: 1px solid rgba(197, 160, 89, 0.3); padding: 40px; transition: 0.3s; cursor: pointer; text-align: left; background: #0a0a0a;" onmouseover="this.style.borderColor='#C5A059'" onmouseout="this.style.borderColor='rgba(197, 160, 89, 0.3)'">
-            <h3 style="color: #C5A059; font-size: 1.5rem; margin-bottom: 20px; text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">Inmobiliaria</h3>
-            <p style="color: #bbb; line-height: 1.6; font-size: 1rem; font-weight: 400;">Tasaciones, topografía, regularización y gestión urbana con estándares de alta precisión.</p>
-        </div>
-    </a>
-
-    <a href="#contacto-footer" style="text-decoration: none; display: block; color: inherit;">
-        <div style="border: 1px solid #111; padding: 40px; transition: 0.3s; cursor: pointer; text-align: left; background: #0a0a0a;" onmouseover="this.style.borderColor='#C5A059'" onmouseout="this.style.borderColor='#111'">
-            <h3 style="color: #C5A059; font-size: 1.5rem; margin-bottom: 20px; text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">Constructora</h3>
-            <p style="color: #bbb; line-height: 1.6; font-size: 1rem; font-weight: 400;">Ejecución de proyectos, remodelaciones, ampliaciones y reforzamiento estructural técnico.</p>
-        </div>
-    </a>
-
-</div>
-
-        </div>
-    </div>
-</section>
-
-    <section id="envia-consulta" style="position: relative; padding: 100px 8%; background-image: url('nosotros (1).jpg'); background-size: cover; background-position: center; background-attachment: fixed; font-family: 'Montserrat', sans-serif;">
-    
-    <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.65);"></div>
-
-    <div style="position: relative; z-index: 1; max-width: 1200px; margin: auto;">
-        
-        <h2 style="color: #fff; font-size: 2.8rem; font-weight: 700; margin-bottom: 50px; text-transform: uppercase; text-align: center; letter-spacing: 2px;">Envía tu consulta</h2>
-
-        <form style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 0;">
-            
-            <div style="background: rgba(255, 255, 255, 0.98); padding: 40px; border-radius: 16px; border-top: 6px solid #C5A059; box-shadow: 0 15px 35px rgba(0,0,0,0.2); display: flex; flex-direction: column; gap: 20px;">
-                <span style="display: block; font-size: 1.3rem; color: #C5A059; font-weight: 700; margin-bottom: 5px;">01. Identificación</span>
-                <input type="text" placeholder="Nombre y Apellido" required style="width: 100%; padding: 16px; border: 1px solid #e0e0e0; border-radius: 10px; background: #fff; font-size: 0.95rem; font-family: 'Montserrat', sans-serif; outline: none; transition: 0.3s; box-sizing: border-box;">
-                <input type="tel" placeholder="Teléfono" required style="width: 100%; padding: 16px; border: 1px solid #e0e0e0; border-radius: 10px; background: #fff; font-size: 0.95rem; font-family: 'Montserrat', sans-serif; outline: none; transition: 0.3s; box-sizing: border-box;">
-                <input type="email" placeholder="Correo Electrónico" required style="width: 100%; padding: 16px; border: 1px solid #e0e0e0; border-radius: 10px; background: #fff; font-size: 0.95rem; font-family: 'Montserrat', sans-serif; outline: none; transition: 0.3s; box-sizing: border-box;">
+        <h2 style="color: #fff; text-align: center; margin-bottom: 50px;">Envía tu consulta</h2>
+        <form class="form-responsive" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+            <div style="background: #fff; padding: 30px; border-radius: 10px;">
+                <span style="color: #C5A059; font-weight: bold;">01. Identificación</span>
+                <input type="text" placeholder="Nombre" style="width: 100%; margin-top: 10px; padding: 10px;">
             </div>
-
-            <div style="background: rgba(255, 255, 255, 0.98); padding: 40px; border-radius: 16px; border-top: 6px solid #C5A059; box-shadow: 0 15px 35px rgba(0,0,0,0.2); display: flex; flex-direction: column; gap: 20px;">
-                <span style="display: block; font-size: 1.3rem; color: #C5A059; font-weight: 700; margin-bottom: 5px;">02. Especialidad</span>
-                <p style="font-size: 0.9rem; color: #555; line-height: 1.5; margin: 0 0 5px 0; font-weight: 400;">
-                    Seleccione el área de atención requerida para derivar su caso al especialista correspondiente:
-                </p>
-                <select required style="width: 100%; padding: 16px; border: 1px solid #e0e0e0; border-radius: 10px; background: #fff; font-size: 0.95rem; font-family: 'Montserrat', sans-serif; color: #444; cursor: pointer; outline: none; box-sizing: border-box;">
-                    <option value="" disabled selected>Seleccione un área...</option>
-                    <option value="inmobiliaria">Área Inmobiliaria</option>
-                    <option value="constructora">Área Constructora</option>
-                    <option value="asesoria">Asesoría Integral / Legal</option>
+            <div style="background: #fff; padding: 30px; border-radius: 10px;">
+                <span style="color: #C5A059; font-weight: bold;">02. Especialidad</span>
+                <select style="width: 100%; margin-top: 10px; padding: 10px;">
+                    <option>Inmobiliaria</option>
+                    <option>Constructora</option>
                 </select>
             </div>
-
-            <div style="background: rgba(255, 255, 255, 0.98); padding: 40px; border-radius: 16px; border-top: 6px solid #C5A059; box-shadow: 0 15px 35px rgba(0,0,0,0.2); display: flex; flex-direction: column; justify-content: space-between; gap: 20px;">
-                <div style="display: flex; flex-direction: column; gap: 15px;">
-                    <span style="display: block; font-size: 1.3rem; color: #C5A059; font-weight: 700;">03. Detalles</span>
-                    <textarea placeholder="Describa brevemente su requerimiento, proyecto o consulta técnica..." required style="width: 100%; padding: 16px; border: 1px solid #e0e0e0; border-radius: 10px; background: #fff; font-size: 0.95rem; font-family: 'Montserrat', sans-serif; height: 110px; resize: none; outline: none; transition: 0.3s; box-sizing: border-box;"></textarea>
-                </div>
-                <button type="submit" class="btn-submit" style="width: 100%; padding: 16px; background: #C5A059; color: #fff; border: none; border-radius: 10px; font-weight: 700; font-size: 0.95rem; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; box-sizing: border-box;">
-                    Enviar Consulta →
-                </button>
+            <div style="background: #fff; padding: 30px; border-radius: 10px;">
+                <span style="color: #C5A059; font-weight: bold;">03. Detalles</span>
+                <textarea style="width: 100%; margin-top: 10px; padding: 10px;"></textarea>
             </div>
         </form>
     </div>
 </section>
-    
-  <footer>
+
+<footer>
     <div class="footer-container">
-        
         <div class="contact-info">
-            <h4 style="color: #C5A059; font-size: 1.1rem; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">Contáctenos</h4>
-            <p>📍 Calle Teruel N° 370 - Miraflores - Lima, Perú</p>
-            <p>📞 +51 945 792 645</p>
-            <p>✉️ asesores.constructores.gastulo@gmail.com</p>
-            
-            <h5 style="color: #ffffff; font-size: 0.9rem; font-weight: 600; margin: 35px 0 15px 0; letter-spacing: 0.5px;">Conoce nuestras otras empresas:</h5>
-            <div class="grupo-logos" style="display: flex; gap: 25px; align-items: center;">
-                <a href="https://jlabogados.pe" target="_blank" style="transition: opacity 0.3s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
-                    <img src="jl2.png" alt="J&L Abogados" style="height: 42px; width: auto; display: block;">
-                </a>
-                <a href="https://fedas.pe" target="_blank" style="transition: opacity 0.3s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
-                    <img src="fedas.png" alt="Fedas" style="height: 42px; width: auto; display: block;">
-                </a>
-            </div>
+            <h4>Contáctenos</h4>
+            <p>📍 Calle Teruel N° 370 - Miraflores</p>
         </div>
-
         <div class="map-container">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.0374495919014!2d-77.0360814!3d-12.1095368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c940c003bd1d%3A0x508dc849555c204c!2sCalle%20Teruel%20370%2C%20Miraflores%2015074!5e0!3m2!1ses-419!2spe!4v1710000000000!5m2!1ses-419!2spe" 
-                width="100%" 
-                height="100%" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+            <iframe src="https://www.google.com/maps/embed" width="100%" height="100%" style="border:0;"></iframe>
         </div>
-
     </div>
-    
-    <p style="text-align: center; padding: 25px 0; background: #000000; margin: 0; color: #555555; font-size: 0.8rem; border-top: 1px solid #111111; font-weight: 400;">
-        © Copyright 2026 | Gástulo Asesores y Constructores
-    </p>
 </footer>
 
-<a href="https://wa.me/51945792645" class="wsp-btn" target="_blank">
-    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
-        <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.69-4.98c-.202-.101-1.194-.588-1.379-.653-.185-.066-.32-.099-.455.101-.134.2-.522.653-.64 1.293-.117.135-.235.145-.437.045-1.06-.532-1.793-.974-2.527-2.235-.19-.324.19-.301.545-1.011.062-.124.03-.232-.015-.333-.045-.232-.015-.333-.045-.101-.435-1.049-.596-1.44-.156-.381-.311-.329-.455-.333-.118-.005-.254-.006-.39-.006a.792.792 0 0 0-.573.268C3.528 4.571 3.036 5.04 3.036 6c0 1.96 1.425 3.854 1.625 4.122.2.269 2.804 4.28 6.788 5.998.948.41 1.687.656 2.269.842.953.303 1.82.261 2.51.158.766-.115 2.35-.96 2.678-1.887.329-.926.329-1.72.23-1.887-.099-.168-.32-.269-.522-.37z"/>
-    </svg>
-    WhatsApp
-</a>
+<a href="https://wa.me/51945792645" class="wsp-btn">WhatsApp</a>
 
 </body>
-</html> 
-
+</html>
